@@ -134,8 +134,10 @@
                 <label style="color : gray">코로나로 인해.......</label>
                 <div class="col-6 col-12-medium">
                     <ul>
-                        <li id="back1">신랑측 혼주(ABC) : xx은행 oooo-oooo-ooo <a href="javascript:copy_to_clipboard(back1)">복사</a></li>
-                        <li id="back2">신부측 혼주(DEF) : xx은행 oooo-oooo-ooo <a href="javascript:copy_to_clipboard(back2)">복사</a></li>
+                        <li id="back1" cp="xx은행 oooo-oooo-ooo">신랑측 혼주(ABC) : xx은행 oooo-oooo-ooo <a
+                                href="javascript:copy_to_clipboard('back1')">복사</a></li>
+                        <li id="back2" cp="xx은행 oooo-oooo-ooo">신부측 혼주(DEF) : xx은행 oooo-oooo-ooo <a
+                                href="javascript:copy_to_clipboard('back2')">복사</a></li>
                     </ul>
                 </div>
             </section>
@@ -154,19 +156,19 @@
             </header>
             <div id="daumRoughmapContainer1627903587148" class="root_daum_roughmap root_daum_roughmap_landing"
                  style="width:100%; padding-bottom: 5%"></div>
-            <p id="address">&nbsp;서울시 동대문구 망우로 61 <a href="javascript:copy_to_clipboard(address)">복사</a><br/>
+            <p id="address" cp="서울시 동대문구 망우로 61">&nbsp;서울시 동대문구 망우로 61 <a href="javascript:copy_to_clipboard('address')">복사</a><br/>
                 &nbsp;1호선﹒경의중앙선 회기역 2번 출구 도보 2분<br/>
                 &nbsp;[웨딩헤너스 7층 씨엘로홀]</p>
         </div>
-        <h5>Another Apps</h5>
-        <ul class="icons">
-            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
-            </li>
-            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
-            </li>
-            <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-        </ul>
+<!--        <h5>Another Apps</h5>-->
+<!--        <ul class="icons">-->
+<!--            <li><a href="kimgisa://" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>-->
+<!--            <li><a href="navermaps://" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>-->
+<!--            </li>-->
+<!--            <li><a href="tmap://search?name=스타벅스" class="icon brands fa-instagram"><span class="label">Instagram</span></a>-->
+<!--            </li>-->
+<!--            <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>-->
+<!--        </ul>-->
         <a href="#footer" class="goto-next scrolly">Next</a>
     </div>
 </section>
@@ -575,10 +577,21 @@
 
 <script type="text/javascript">
     function copy_to_clipboard(id) {
+
+        var temp = document.createElement('textarea');
         var copyText = document.getElementById(id);
-        copyText.select();
-        copyText.setSelectionRange(0, 100);
+        var val = copyText.getAttribute("cp");
+
         document.execCommand("Copy");
+
+        document.body.appendChild(temp);
+
+        temp.value = val;
+        temp.select();
+
+        document.execCommand('copy');
+        document.body.removeChild(temp);
+
     }
 </script>
 
