@@ -135,7 +135,7 @@ a {
 
 a:hover {
 	border-bottom-color: transparent !important;
-	color: #8cd1a8 !important;
+	/*color: #8cd1a8 !important;*/
 	text-decoration: none;
 }
 
@@ -2816,9 +2816,9 @@ button:disabled,
 	color: inherit;
 }
 
-#header header a:hover {
-	color: #ffffff !important;
-}
+/*#header header a:hover {*/
+/*	color: #ffffff !important;*/
+/*}*/
 
 #header header h1 {
 	font-size: 3em;
