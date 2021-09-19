@@ -575,7 +575,7 @@
 
 <script type="text/javascript">
     function copy_to_clipboard(id) {
-        var copyText = document.getElementById('myInput');
+        var copyText = document.getElementById(id);
         copyText.select();
         copyText.setSelectionRange(0, 100);
         document.execCommand("Copy");
