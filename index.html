@@ -200,12 +200,12 @@
                 <h2>Gallery</h2>
             </header>
 
-<!--            <div id="tables">-->
-<!--                <div style="background: #313a3d; width: 100%; height: 100px;"><span-->
-<!--                        style="vertical-align:middle">전체보기</span></div>-->
-<!--                <div style="background: #7aca9a; width: 50%; height: 100px;  float: left"><span>전주</span></div>-->
-<!--                <div style="background: darkblue; width: 50%; height: 100px;  float: left"><span>전주</span></div>-->
-<!--            </div>-->
+            <!--            <div id="tables">-->
+            <!--                <div style="background: #313a3d; width: 100%; height: 100px;"><span-->
+            <!--                        style="vertical-align:middle">전체보기</span></div>-->
+            <!--                <div style="background: #7aca9a; width: 50%; height: 100px;  float: left"><span>전주</span></div>-->
+            <!--                <div style="background: darkblue; width: 50%; height: 100px;  float: left"><span>전주</span></div>-->
+            <!--            </div>-->
 
             <div class="box alt">
                 <div class="row gtr-uniform gtr-50" id="galleryDiv">
@@ -580,12 +580,21 @@
 <section id="footer">
     <div class="container">
         <header class="major">
-            <h2>Get in touch</h2>
+            <h2>하고 싶은 말</h2>
         </header>
+        <h5 style="color: gray">신랑﹒신부에게 하고 싶은 말을 적어주세요!</h5>
         <form method="post" action="#">
             <div class="row gtr-uniform">
                 <div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name"/></div>
-                <div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email"/></div>
+                <div class="col-12">
+                    <select name="demo-category" id="demo-category">
+                        <option value="" disabled selected hidden>신랑﹒신부와의 관계</option>
+                        <option value="1">신랑 지인</option>
+                        <option value="1">신부 지인</option>
+                        <option value="1">신랑 혼주 지인</option>
+                        <option value="1">신부 혼주 지인</option>
+                    </select>
+                </div>
                 <div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea>
                 </div>
                 <div class="col-12">
