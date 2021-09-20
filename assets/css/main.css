@@ -3480,3 +3480,8 @@ body.is-menu-visible #menu .inner {
 	opacity: 1;
 	visibility: visible;
 }
+
+#galleryDiv > * {
+	margin: 0 !important;
+	padding: 0 !important;
+}
