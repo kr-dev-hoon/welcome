@@ -6,6 +6,18 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
+
+    <script charset="UTF-8" class="daum_roughmap_loader_script"
+            src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+    <script charset="UTF-8">
+        window.onload = function () {
+            new daum.roughmap.Lander({
+                "timestamp": "1627903587148",
+                "key": "26u5s"
+            }).render();
+        };
+    </script>
 </head>
 <body class="is-preload">
 
@@ -60,12 +72,11 @@
 <!-- Two -->
 <section id="two" class="main special">
     <div class="container">
-        <span class="image fit primary"><img src="images/pic02.jpg" alt=""/></span>
         <div class="content">
             <header class="major">
                 <h2>식순</h2>
             </header>
-
+            <span class="image fit primary"><img src="images/pic02.jpg" alt=""/></span>
             <section>
                 <div class="table-wrapper">
                     <table class="alt">
@@ -177,7 +188,6 @@
 <!-- Three -->
 <section id="four" class="main special">
     <div class="container" id="map">
-        <!--        <span class="image fit primary"><img src="images/pic03.jpg" alt=""/></span>-->
         <div class="content">
             <header class="major">
                 <h2>오시는길</h2>
@@ -185,9 +195,9 @@
             <div id="daumRoughmapContainer1627903587148" class="root_daum_roughmap root_daum_roughmap_landing"
                  style="width:100%; padding-bottom: 5%"></div>
             <p id="address" cp="서울시 동대문구 망우로 61">&nbsp;서울시 동대문구 망우로 61 <a
-                    href="javascript:copy_to_clipboard('address')">복사</a><br/>
-                &nbsp;1호선﹒경의중앙선 회기역 2번 출구 도보 2분<br/>
-                &nbsp;[웨딩헤너스 7층 씨엘로홀]</p>
+                    href="javascript:copy_to_clipboard('address')" style="font-size: 12px">복사</a><br/>
+                &nbsp;[웨딩헤너스 7층 씨엘로홀]<br/>
+                <span style="font-size: 12px">1호선﹒경의중앙선 회기역 2번 출구 도보 2분<br/></span></p>
         </div>
         <a href="#footer" class="goto-next scrolly">Next</a>
     </div>
@@ -624,21 +634,21 @@
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
-<script charset="UTF-8" class="daum_roughmap_loader_script"
-        src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+<!--<script charset="UTF-8" class="daum_roughmap_loader_script"-->
+<!--        src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>-->
 
-<script charset="UTF-8">
-    window.onload = function () {
-        new daum.roughmap.Lander({
-            "timestamp": "1627903587148",
-            "key": "26u5s"
-        }).render();
-    };
-</script>
+<!--<script charset="UTF-8">-->
+<!--    window.onload = function () {-->
+<!--        new daum.roughmap.Lander({-->
+<!--            "timestamp": "1627903587148",-->
+<!--            "key": "26u5s"-->
+<!--        }).render();-->
+<!--    };-->
+<!--</script>-->
 
 <script type="text/javascript">
-    function copy_to_clipboard(id) {
 
+    function copy_to_clipboard(id) {
         var temp = document.createElement('textarea');
         var copyText = document.getElementById(id);
         var val = copyText.getAttribute("cp");
@@ -652,13 +662,10 @@
 
         document.execCommand('copy');
         document.body.removeChild(temp);
-
     }
 
     function info_photo() {
-
         alert('감사의 의미로 포토부스를 설치하였습니다. \n4컷 사진을 찍어 결혼식의 추억을 개인적으로 간직하시고, 색다르고 기억에 남는 결혼식이 되길 바라겠습니다.');
-
     }
 </script>
 
