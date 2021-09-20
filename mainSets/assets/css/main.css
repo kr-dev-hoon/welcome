@@ -153,7 +153,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 800;
     letter-spacing: 0.075em;
     line-height: 1em;
-    margin: 0 0 1em 0;
+    margin: 0 0 1.5em 0;
     text-transform: uppercase;
 }
 
@@ -164,7 +164,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 
 h2 {
     font-size: 1.75em;
-    line-height: 1.5em;
+    line-height: 0.5em;
 }
 
 h3 {
@@ -207,6 +207,12 @@ hr {
 
 hr.major {
     margin: 3em 0;
+}
+
+hr.custom {
+    border: 0;
+    border-bottom: dotted 2px #dddddd;
+    margin: 1em 0;
 }
 
 blockquote {
@@ -1950,6 +1956,9 @@ header h6 + p {
 
 header.major {
     text-align: center;
+    horiz-align: center;
+    vertical-align: top;
+    margin: 0;
 }
 
 header.major h1, header.major h2, header.major h3, header.major h4, header.major h5, header.major h6 {
@@ -1964,6 +1973,7 @@ header.major h1:after, header.major h2:after, header.major h3:after, header.majo
     margin: 0.75em auto -0.8em auto;
     position: relative;
     width: 4em;
+    padding :0;
 }
 
 header.major p {
@@ -2739,13 +2749,13 @@ button:disabled,
 }
 
 .main .container {
-    padding: 5em 2.5em 8em 2.5em;
+    padding: 2em 2.5em 8em 2.5em;
     background: rgba(255, 255, 255, 0.95);
     box-shadow: inset 0 1px 0 0 #dddddd;
 }
 
 .main .container:before {
-    min-height: calc(100vh - 13em);
+    min-height: 1.5em;
     content: '';
     display: inline-block;
     vertical-align: middle;
@@ -2805,8 +2815,8 @@ button:disabled,
 #header header {
     color: rgba(255, 255, 255, 0.5);
     display: inline-block;
-    padding-bottom: 8em;
-    vertical-align: middle;
+    vertical-align: top;
+    margin-top:1em;
 }
 
 #header header h1, #header header h2, #header header h3, #header header h4, #header header h5, #header header h6, #header header strong, #header header b {
@@ -2826,17 +2836,16 @@ button:disabled,
 #header header h1 {
     font-size: 3em;
     line-height: 1.25em;
-    margin-top: -8em;
 }
 
-#header header h1:after {
-    margin-top: 0.5em;
-}
+/*#header header h1:after {*/
+/*    margin-top: 0.5em;*/
+/*}*/
 
 #header header p {
     color: #ffffff;
     font-weight: 700;
-    margin: 1.5em 0 0 0;
+    margin: 0 0 0 0;
 }
 
 #header .container {
@@ -2866,7 +2875,7 @@ button:disabled,
 }
 
 #footer .container {
-    padding: 5em 2.5em 3em 2.5em;
+    padding: 2em 2.5em 3em 2.5em;
     background: rgba(255, 255, 255, 0.95);
     box-shadow: inset 0 1px 0 0 #dddddd;
 }
@@ -2934,7 +2943,7 @@ button:disabled,
     /* Main */
     .main .image.primary {
         display: block;
-        margin: 0 0 4em 0;
+        margin: 2em 0 2em 0;
     }
 
     .main .container {
@@ -3011,10 +3020,6 @@ button:disabled,
 
     #header header h1 {
         font-size: 2em;
-    }
-
-    #header header p {
-        margin-top: 1em;
     }
 
     #header .container {
@@ -3107,7 +3112,7 @@ button:disabled,
 
     /* Main */
     .main .container {
-        padding: 3em 1em 1em 1em;
+        padding: 2em 1em 1em 1em;
     }
 
     .main .container .image.primary:first-child {
@@ -3116,7 +3121,7 @@ button:disabled,
 
     /* Footer */
     #footer .container {
-        padding: 3em 1em 1em 1em;
+        padding: 2em 1em 1em 1em;
     }
 
     #footer footer .copyright {
@@ -3477,4 +3482,12 @@ body.is-menu-visible #menu .inner {
 .no-margin > * {
     margin: 0 !important;
     padding: 0 !important;
+}
+
+.mg-1em {
+    margin-top:1em;
+}
+
+.mg-2em {
+    margin-top:2em;
 }
