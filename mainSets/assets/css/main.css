@@ -81,7 +81,7 @@ html {
 html {
     background-color: #313a3d;
     background-attachment: fixed, fixed;
-    background-image: url("images/overlay.png"), url("../../images/main.jpg");
+    background-image: url("images/overlay.png"), url("../../images/main-1.jpeg");
     background-position: top left, center center;
     background-repeat: repeat, none;
     background-size: auto, cover;
@@ -148,7 +148,16 @@ p {
     margin: 0 0 2em 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
+    color: #61686b;
+    font-weight: 500;
+    letter-spacing: 0.075em;
+    line-height: 1em;
+    margin: 0 0 1.5em 0;
+    text-transform: uppercase;
+}
+
+h2, h3, h4, h5, h6 {
     color: #61686b;
     font-weight: 800;
     letter-spacing: 0.075em;
@@ -2844,7 +2853,7 @@ button:disabled,
 
 #header header p {
     color: #ffffff;
-    font-weight: 700;
+    font-weight: 400;
     margin: 0 0 0 0;
 }
 
