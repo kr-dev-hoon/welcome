@@ -33,8 +33,9 @@
 				// Hack: iOS vh bug.
 					if (browser.os == 'ios')
 						$wrapper
-							.css('margin-top', -25)
-							.css('padding-bottom', 25);
+							.css('height', '-webkit-fill-available');
+							// .css('margin-top', -25)
+							// .css('padding-bottom', 25);
 
 				// Pass scroll event to window.
 					$wrapper.on('scroll', function() {
