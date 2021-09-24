@@ -998,7 +998,7 @@ input, select, textarea {
 				#thumbnails article .thumbnail img {
 					display: block;
 					width: 100%;
-					height: 100%;
+					/*height: 100%;*/
 					background-size: cover;
 				}
 

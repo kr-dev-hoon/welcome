@@ -78,7 +78,7 @@
 
 				$window.on('load.hl_headerTitle', function() {
 
-					breakpoints.on('>medium', function() {
+					// breakpoints.on('>medium', function() {
 
 						$headerTitle
 							.css('position', 'fixed')
@@ -88,19 +88,19 @@
 							.css('width', '100%')
 							.css('margin-top', ($headerTitle.outerHeight() / -2));
 
-					});
-
-					breakpoints.on('<=medium', function() {
-
-						$headerTitle
-							.css('position', '')
-							.css('height', '')
-							.css('top', '')
-							.css('left', '')
-							.css('width', '')
-							.css('margin-top', '');
-
-					});
+					// });
+					//
+					// breakpoints.on('<=medium', function() {
+					//
+					// 	$headerTitle
+					// 		.css('position', '')
+					// 		.css('height', '')
+					// 		.css('top', '')
+					// 		.css('left', '')
+					// 		.css('width', '')
+					// 		.css('margin-top', '');
+					//
+					// });
 
 					$window.off('load.hl_headerTitle');
 
@@ -113,10 +113,11 @@
 				$header.scrollex({
 					terminate: function() {
 
-						$headerTitle.css('opacity', '');
+						$headerTitle.css('opacity', '1');
 
 					},
 					scroll: function(progress) {
+						console.log(progress);
 
 						// Fade out title as user scrolls down.
 							if (progress > 0.5)

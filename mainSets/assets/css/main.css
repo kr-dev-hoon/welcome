@@ -81,7 +81,7 @@ html {
 html {
     background-color: #313a3d;
     background-attachment: fixed, fixed;
-    background-image: url("images/overlay.png"), url("../../images/2T3A9706.jpg");
+    background-image: url("https://cdn.jsdelivr.net/gh/kr-dev-hoon/welcome/mainSets/images/overlay.png"), url("https://cdn.jsdelivr.net/gh/kr-dev-hoon/welcome/mainSets/images/2T3A9706.jpg");
     background-position: top left, center center;
     background-repeat: repeat, none;
     background-size: auto, cover;
@@ -1980,14 +1980,6 @@ header.major p {
     margin-top: 0;
 }
 
-/* Info */
-.mainInfo{
-    position: relative;
-    margin: 50% 10% 5% 0;
-    color: #ffffff;
-    font-weight: 400;
-}
-
 /* Form */
 
 form {
@@ -2516,6 +2508,7 @@ ul.actions.fit.stacked {
 .table-wrapper {
     -webkit-overflow-scrolling: touch;
     overflow-x: auto;
+    line-height: 1.2em;
 }
 
 table {
@@ -2822,7 +2815,6 @@ button:disabled,
 
 #header header {
     color: rgba(255, 255, 255, 0.5);
-    display: inline-block;
     vertical-align: top;
     margin-top:1em;
 }
@@ -2919,6 +2911,14 @@ button:disabled,
     padding-left: 0;
 }
 
+/* Info */
+.mainInfo{
+    position: relative;
+    color: #ffffff;
+    font-weight: 400;
+    text-align: right;
+}
+
 /* Large */
 
 @media screen and (max-width: 1680px) {
@@ -2953,9 +2953,17 @@ button:disabled,
         display: none;
     }
 
+    #header header h1 {
+        font-size: 2em;
+        line-height: 1.25em;
+    }
+
+    .mainInfo{
+        margin: 30% 10% 5% 0;
+    }
+
     /* Header */
     #header header {
-        padding-bottom: 9em;
         width: 80%;
     }
 
@@ -3017,6 +3025,11 @@ button:disabled,
         padding-bottom: 0;
     }
 
+    /* Info */
+    .mainInfo{
+        margin: 50% 10% 25% 0;
+    }
+
     #header header h1 {
         font-size: 1.5em;
         line-height: 1.25em;
@@ -3041,6 +3054,11 @@ button:disabled,
     /* Basic */
     html, body {
         min-width: 320px;
+    }
+
+    /* Info */
+    .mainInfo{
+        margin: 60% 10% 5% 0;
     }
 
     /* List */
