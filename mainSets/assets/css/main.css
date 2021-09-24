@@ -82,7 +82,7 @@ html {
     background-color: #313a3d;
     background-attachment: fixed, fixed;
     background-image: url("images/overlay.png"), url("../../images/2T3A9706.jpg");
-    background-position: top left, top center;
+    background-position: top left, center center;
     background-repeat: repeat, none;
     background-size: auto, cover;
 }
@@ -1978,6 +1978,14 @@ header.major h2:after, header.major h3:after, header.major h4:after, header.majo
 
 header.major p {
     margin-top: 0;
+}
+
+/* Info */
+.mainInfo{
+    position: relative;
+    margin: 50% 10% 5% 0;
+    color: #ffffff;
+    font-weight: 400;
 }
 
 /* Form */
