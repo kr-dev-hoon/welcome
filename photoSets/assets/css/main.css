@@ -129,7 +129,7 @@ input, select, textarea {
 		}
 
 	body {
-		background-color: #fff;
+		/*background-color: #fff;*/
 		color: #aaa;
 	}
 
@@ -998,6 +998,8 @@ input, select, textarea {
 				#thumbnails article .thumbnail img {
 					display: block;
 					width: 100%;
+					height: 100%;
+					background-size: cover;
 				}
 
 				#thumbnails article .thumbnail:before {
@@ -1199,23 +1201,23 @@ input, select, textarea {
 			z-index: 1;
 		}
 
-			#viewer .slide .caption {
-				background-image: -moz-linear-gradient(bottom, rgba(16,16,16,0.75), rgba(16,16,16,0.25) 80%, rgba(16,16,16,0));
-				background-image: -webkit-linear-gradient(bottom, rgba(16,16,16,0.75), rgba(16,16,16,0.25) 80%, rgba(16,16,16,0));
-				background-image: -ms-linear-gradient(bottom, rgba(16,16,16,0.75), rgba(16,16,16,0.25) 80%, rgba(16,16,16,0));
-				background-image: linear-gradient(bottom, rgba(16,16,16,0.75), rgba(16,16,16,0.25) 80%, rgba(16,16,16,0));
-				padding: 2em 2em 0.75em 2em ;
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				width: 100%;
-				color: rgba(255, 255, 255, 0.5);
-				z-index: 1;
-			}
+			/*#viewer .slide .caption {*/
+			/*	background-image: -moz-linear-gradient(bottom, rgba(16,16,16,0.75), rgba(16,16,16,0.25) 80%, rgba(16,16,16,0));*/
+			/*	background-image: -webkit-linear-gradient(bottom, rgba(16,16,16,0.75), rgba(16,16,16,0.25) 80%, rgba(16,16,16,0));*/
+			/*	background-image: -ms-linear-gradient(bottom, rgba(16,16,16,0.75), rgba(16,16,16,0.25) 80%, rgba(16,16,16,0));*/
+			/*	background-image: linear-gradient(bottom, rgba(16,16,16,0.75), rgba(16,16,16,0.25) 80%, rgba(16,16,16,0));*/
+			/*	padding: 2em 2em 0.75em 2em ;*/
+			/*	position: absolute;*/
+			/*	bottom: 0;*/
+			/*	left: 0;*/
+			/*	width: 100%;*/
+			/*	color: rgba(255, 255, 255, 0.5);*/
+			/*	z-index: 1;*/
+			/*}*/
 
-				#viewer .slide .caption h2, #viewer .slide .caption h3, #viewer .slide .caption h4, #viewer .slide .caption h5, #viewer .slide .caption h6 {
-					color: #fff;
-				}
+			/*	#viewer .slide .caption h2, #viewer .slide .caption h3, #viewer .slide .caption h4, #viewer .slide .caption h5, #viewer .slide .caption h6 {*/
+			/*		color: #fff;*/
+			/*	}*/
 
 			#viewer .slide .image {
 				-moz-transition: opacity 0.5s ease-in-out;
@@ -1227,8 +1229,9 @@ input, select, textarea {
 				left: 0;
 				width: 100%;
 				height: 100%;
+				/*object-fit: scale-down;*/
 				background-repeat: no-repeat;
-				background-size: cover;
+				background-size: contain;
 				opacity: 0;
 			}
 

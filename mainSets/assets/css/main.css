@@ -81,7 +81,7 @@ html {
 html {
     background-color: #313a3d;
     background-attachment: fixed, fixed;
-    background-image: url("images/overlay.png"), url("../../images/main-1.jpeg");
+    background-image: url("images/overlay.png"), url("../../images/2T3A9706.jpg");
     background-position: top left, center center;
     background-repeat: repeat, none;
     background-size: auto, cover;
@@ -148,18 +148,9 @@ p {
     margin: 0 0 2em 0;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
     color: #61686b;
-    font-weight: 500;
-    letter-spacing: 0.075em;
-    line-height: 1em;
-    margin: 0 0 1.5em 0;
-    text-transform: uppercase;
-}
-
-h2, h3, h4, h5, h6 {
-    color: #61686b;
-    font-weight: 800;
+    font-weight: 450;
     letter-spacing: 0.075em;
     line-height: 1em;
     margin: 0 0 1.5em 0;
@@ -1974,7 +1965,7 @@ header.major h1, header.major h2, header.major h3, header.major h4, header.major
     position: relative;
 }
 
-header.major h1:after, header.major h2:after, header.major h3:after, header.major h4:after, header.major h5:after, header.major h6:after {
+header.major h2:after, header.major h3:after, header.major h4:after, header.major h5:after, header.major h6:after {
     background: #dddddd;
     content: '';
     display: block;
@@ -2809,7 +2800,7 @@ button:disabled,
 /* Header */
 
 #header {
-    height: 100vh;
+    height: 90vh;
     position: relative;
     text-align: center;
 }
@@ -2817,7 +2808,7 @@ button:disabled,
 #header:after {
     content: '';
     display: inline-block;
-    height: 100vh;
+    height: 90vh;
     vertical-align: middle;
 }
 
@@ -2832,24 +2823,15 @@ button:disabled,
     color: #ffffff;
 }
 
-#header header a {
-    color: inherit;
-}
-
-/*#header header a:hover {*/
-/*	color: #ffffff !important;*/
-/*}*/
-/**
-상단 간격 조절
- */
 #header header h1 {
     font-size: 3em;
     line-height: 1.25em;
+    margin-top: 1em;
 }
 
-/*#header header h1:after {*/
-/*    margin-top: 0.5em;*/
-/*}*/
+#header header a {
+    color: inherit;
+}
 
 #header header p {
     color: #ffffff;
@@ -3016,11 +2998,11 @@ button:disabled,
 
     /* Header */
     #header {
-        height: 80vh;
+        height: 90vh;
     }
 
     #header:after {
-        height: 80vh;
+        height: 90vh;
     }
 
     #header header {
@@ -3028,7 +3010,9 @@ button:disabled,
     }
 
     #header header h1 {
-        font-size: 2em;
+        font-size: 1.5em;
+        line-height: 1.25em;
+        margin-top: 1em;
     }
 
     #header .container {
@@ -3149,6 +3133,12 @@ button:disabled,
 /**
 Menu Nav Bar
  */
+
+#header2 {
+    height: 2.75em;
+    line-height: 2.75em;
+}
+
 #header2 nav {
     display: -moz-flex;
     display: -webkit-flex;
@@ -3311,6 +3301,10 @@ Menu Nav Bar
 }
 
 /* Menu */
+
+#wrapper2 {
+    height: 10vh;
+}
 
 #menu {
     -moz-transition: -moz-transform 0.35s ease, opacity 0.35s ease, visibility 0.35s;
@@ -3499,4 +3493,8 @@ body.is-menu-visible #menu .inner {
 
 .mg-2em {
     margin-top:2em;
+}
+
+.info {
+    line-height: 2em;
 }
