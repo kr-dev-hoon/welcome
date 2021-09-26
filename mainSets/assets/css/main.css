@@ -2914,9 +2914,46 @@ button:disabled,
 /* Info */
 .mainInfo{
     position: relative;
+    display: inline-block;
     color: #ffffff;
     font-weight: 400;
+    width: 80vw;
+    height: 15%;
+    vertical-align: text-bottom;
     text-align: right;
+    line-height: 1.5;
+    margin: 0 0 1em 0;
+}
+
+@media screen and (max-width: 12450px) {
+
+
+    /* Basic */
+    body, input, select, textarea {
+        font-size: 12pt;
+    }
+
+    .mainInfo {
+        font-size: 2em;
+        margin-bottom :3em;
+    }
+
+}
+
+/* Large */
+
+@media screen and (max-height: 1680px) {
+
+    /* Basic */
+    body, input, select, textarea {
+        font-size: 12pt;
+    }
+
+    .mainInfo {
+        font-size: 1.5em;
+        margin-bottom :3em;
+    }
+
 }
 
 /* Large */
@@ -2926,6 +2963,11 @@ button:disabled,
     /* Basic */
     body, input, select, textarea {
         font-size: 12pt;
+    }
+
+    .mainInfo {
+        font-size: 1.5em;
+        margin-bottom :3em;
     }
 
 }
@@ -2958,8 +3000,8 @@ button:disabled,
         line-height: 1.25em;
     }
 
-    .mainInfo{
-        margin: 30% 10% 5% 0;
+    .mainInfo {
+        font-size: 1.5em;
     }
 
     /* Header */
@@ -3012,6 +3054,10 @@ button:disabled,
         display: none;
     }
 
+    .mainInfo {
+        font-size: 1em;
+    }
+
     /* Header */
     #header {
         height: 90vh;
@@ -3023,11 +3069,6 @@ button:disabled,
 
     #header header {
         padding-bottom: 0;
-    }
-
-    /* Info */
-    .mainInfo{
-        margin: 50% 10% 25% 0;
     }
 
     #header header h1 {
@@ -3054,11 +3095,6 @@ button:disabled,
     /* Basic */
     html, body {
         min-width: 320px;
-    }
-
-    /* Info */
-    .mainInfo{
-        margin: 60% 10% 5% 0;
     }
 
     /* List */
