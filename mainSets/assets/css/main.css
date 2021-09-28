@@ -148,7 +148,16 @@ p {
     margin: 0 0 2em 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
+    color: #61686b;
+    font-weight: 500;
+    letter-spacing: 0.075em;
+    line-height: 1em;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+h2, h3, h4, h5, h6 {
     color: #61686b;
     font-weight: 450;
     letter-spacing: 0.075em;
@@ -1965,7 +1974,7 @@ header.major h1, header.major h2, header.major h3, header.major h4, header.major
     position: relative;
 }
 
-header.major h2:after, header.major h3:after, header.major h4:after, header.major h5:after, header.major h6:after {
+header.major h1:after, header.major h2:after, header.major h3:after, header.major h4:after, header.major h5:after, header.major h6:after {
     background: #dddddd;
     content: '';
     display: block;
@@ -2796,7 +2805,7 @@ button:disabled,
 /* Header */
 
 #header {
-    height: 90vh;
+    height: 30vh;
     position: relative;
     text-align: center;
 }
@@ -2804,7 +2813,7 @@ button:disabled,
 #header:after {
     content: '';
     display: inline-block;
-    height: 90vh;
+    height: 30vh;
     vertical-align: middle;
 }
 
@@ -2821,7 +2830,7 @@ button:disabled,
 #header header h1 {
     font-size: 3em;
     line-height: 1.25em;
-    margin-top: 1em;
+    margin: 60vh 0 1.5em 0;
 }
 
 #header header a {
@@ -2995,11 +3004,6 @@ button:disabled,
         font-size: 1.5em;
     }
 
-    /* Header */
-    #header header {
-        width: 80%;
-    }
-
     #header .container {
         margin-left: -40%;
         padding: 3em;
@@ -3052,11 +3056,11 @@ button:disabled,
 
     /* Header */
     #header {
-        height: 90vh;
+        height: 30vh;
     }
 
     #header:after {
-        height: 90vh;
+        height: 30vh;
     }
 
     #header header {
@@ -3066,7 +3070,6 @@ button:disabled,
     #header header h1 {
         font-size: 1.5em;
         line-height: 1.25em;
-        margin-top: 1em;
     }
 
     #header .container {
