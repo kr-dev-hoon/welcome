@@ -81,7 +81,7 @@ html {
 html {
     background-color: #313a3d;
     background-attachment: fixed, fixed;
-    background-image: url("https://cdn.jsdelivr.net/gh/kr-dev-hoon/welcome/mainSets/images/overlay.png"), url("https://cdn.jsdelivr.net/gh/kr-dev-hoon/welcome/mainSets/images/2T3A9706.jpg");
+    background-image: url("https://cdn.jsdelivr.net/gh/kr-dev-hoon/welcome/mainSets/images/overlay.png"), url("../../images/2T3A9706.jpg");
     background-position: top left, center center;
     background-repeat: repeat, none;
     background-size: auto, cover;
@@ -2275,11 +2275,6 @@ input[type="radio"] + label:before {
     width: 100%;
 }
 
-.image.fit:hover {
-    cursor: pointer;
-    opacity: 0.8;
-}
-
 /* List */
 
 ol {
@@ -2912,11 +2907,44 @@ button:disabled,
 }
 
 /* Info */
-.mainInfo{
-    position: relative;
+#mainInfo{
+    display: inline-block;
     color: #ffffff;
     font-weight: 400;
-    text-align: right;
+    vertical-align: text-bottom;
+    text-align: center;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 12450px) {
+
+
+    /* Basic */
+    body, input, select, textarea {
+        font-size: 12pt;
+    }
+
+    #mainInfo {
+        font-size: 2em;
+        margin-bottom :3em;
+    }
+
+}
+
+/* Large */
+
+@media screen and (max-height: 1680px) {
+
+    /* Basic */
+    body, input, select, textarea {
+        font-size: 12pt;
+    }
+
+    #mainInfo {
+        font-size: 1.5em;
+        margin-bottom :3em;
+    }
+
 }
 
 /* Large */
@@ -2926,6 +2954,11 @@ button:disabled,
     /* Basic */
     body, input, select, textarea {
         font-size: 12pt;
+    }
+
+    #mainInfo {
+        font-size: 1.5em;
+        margin-bottom :3em;
     }
 
 }
@@ -2958,8 +2991,8 @@ button:disabled,
         line-height: 1.25em;
     }
 
-    .mainInfo{
-        margin: 30% 10% 5% 0;
+    #mainInfo {
+        font-size: 1.5em;
     }
 
     /* Header */
@@ -3012,6 +3045,11 @@ button:disabled,
         display: none;
     }
 
+    #mainInfo {
+        font-size: 1em;
+        margin-bottom: 1em;
+    }
+
     /* Header */
     #header {
         height: 90vh;
@@ -3023,11 +3061,6 @@ button:disabled,
 
     #header header {
         padding-bottom: 0;
-    }
-
-    /* Info */
-    .mainInfo{
-        margin: 50% 10% 25% 0;
     }
 
     #header header h1 {
@@ -3056,9 +3089,9 @@ button:disabled,
         min-width: 320px;
     }
 
-    /* Info */
-    .mainInfo{
-        margin: 60% 10% 5% 0;
+    #mainInfo {
+        font-size: 1em;
+        margin-bottom: 5vh;
     }
 
     /* List */

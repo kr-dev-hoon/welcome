@@ -72,8 +72,8 @@
 		var $header = $('#header'),
 			$headerTitle = $header.find('header'),
 			$headerContainer = $header.find('.container');
+			$mainInfo = $header.find('#mainInfo');
 
-		// Make title fixed.
 			if (!browser.mobile) {
 
 				$window.on('load.hl_headerTitle', function() {
@@ -81,12 +81,11 @@
 					// breakpoints.on('>medium', function() {
 
 						$headerTitle
-							.css('position', 'fixed')
-							.css('height', 'auto')
-							.css('top', '50%')
-							.css('left', '0')
-							.css('width', '100%')
-							.css('margin-top', ($headerTitle.outerHeight() / -2));
+							.css('padding-left', '8em');
+
+						$mainInfo
+							.css('text-align','center')
+							.css('margin-bottom', '3.5em');
 
 					// });
 					//
@@ -117,7 +116,6 @@
 
 					},
 					scroll: function(progress) {
-						console.log(progress);
 
 						// Fade out title as user scrolls down.
 							if (progress > 0.5)
