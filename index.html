@@ -274,7 +274,7 @@
                 </div>
                 <div class="col-12">
                     <ul class="actions special">
-                        <li><input id="sendMessage" type="submit" value="Send Message" class="primary"/></li>
+                        <li><input id="sendMessage" type="submit" value="Send Message" class="primary" /></li>
                     </ul>
                 </div>
             </div>
@@ -327,6 +327,7 @@
 
         document.getElementById("sendMessage").classList.remove('primary');
         document.getElementById("sendMessage").setAttribute("disabled","disabled");
+        document.getElementById("sendMessage").value = "Sending...";
 
         var category = document.getElementById("demo-category");
 
@@ -346,10 +347,11 @@
             dataType: "json",
             contentType: "application/json",
             data: JSON.stringify(requestData),
-            always: (function(xhr, status) {
+            complete: function() {
                 document.getElementById("sendMessage").classList.add('primary');
                 document.getElementById("sendMessage").removeAttribute("disabled");
-            }),
+                document.getElementById("sendMessage").value = "Send Message";
+            },
             error: function(e) {
                 console.log('error!');
                 console.log(e);
