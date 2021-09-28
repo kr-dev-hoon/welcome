@@ -262,7 +262,7 @@
             <div class="row gtr-uniform">
                 <div class="col-12">
                     <select name="demo-category" id="demo-category">
-                        <option value="" disabled selected hidden>신랑﹒신부와의 관계</option>
+                        <option value="1" disabled selected hidden>신랑﹒신부와의 관계</option>
                         <option value="1">신랑 지인</option>
                         <option value="2">신부 지인</option>
                         <option value="3">신랑 혼주 지인</option>
@@ -325,6 +325,11 @@
 
     function sendMessage() {
 
+        if(document.getElementById("message").value === '') {
+            toastr.error('Message를 입력해주세요.');
+            return false;
+        }
+
         document.getElementById("sendMessage").classList.remove('primary');
         document.getElementById("sendMessage").setAttribute("disabled","disabled");
         document.getElementById("sendMessage").value = "Sending...";
@@ -333,7 +338,7 @@
 
         var name = document.getElementById("name").value;
         var message = document.getElementById("message").value;
-        var relation = category.options[category.selectedIndex].value;
+        var relation = category.options[category.selectedIndex].value || "1";
 
         var requestData = new Object();
 
