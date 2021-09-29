@@ -3068,6 +3068,7 @@ button:disabled,
 
     #header header {
         padding-bottom: 0;
+        margin:0 auto;
     }
 
     #header header h1 {
