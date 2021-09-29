@@ -2808,7 +2808,10 @@ button:disabled,
     height: 30vh;
     position: relative;
     text-align: center;
-    margin: 5vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
 }
 
 #header:after {
@@ -2832,7 +2835,7 @@ button:disabled,
     font-size: 3em;
     line-height: 1.25em;
     margin: 55vh 0 1.5em 0;
-    padding: 2vh 2vh 0 2vh;
+    padding: 2vh 2vw 0 2vw;
 }
 
 #header header a {
@@ -2843,7 +2846,7 @@ button:disabled,
     color: #ffffff;
     font-weight: 400;
     margin: 0 0 0 0;
-    padding: 0 2vh 1vh 2vh;
+    padding: 0 2vw 1vh 2vw;
 }
 
 #header .container {
