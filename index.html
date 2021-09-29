@@ -356,7 +356,7 @@
             contentType: "application/json",
             data: JSON.stringify(requestData),
             success: function () {
-                toastr.info('축하메시지가 발송되었습니다. 감사합니다.');
+                toastr.info('축하메시지가 발송되었습니다. \n감사합니다.');
                 document.getElementById("name").value = '';
                 document.getElementById("message").value = '';
                 document.getElementById("demo-category").selectedIndex = 0;
@@ -369,7 +369,7 @@
             error: function(e) {
                 console.log('error!');
                 console.log(e);
-                toastr.error('죄송합니다. 다시 시도해주세요.');
+                toastr.error('죄송합니다. \n다시 시도해주세요.');
             }
         });
     }
