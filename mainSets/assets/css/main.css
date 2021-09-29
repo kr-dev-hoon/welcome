@@ -113,7 +113,7 @@ html.is-touch #wrapper {
 
 body, input, select, textarea {
     color: #6f7577;
-    font-family: "Raleway", "Helvetica", sans-serif;
+    font-family: "Hanna Air";
     font-size: 15pt;
     font-weight: 400;
     line-height: 1.75em;
@@ -1860,7 +1860,7 @@ html body:before {
     text-rendering: auto;
     line-height: 1;
     text-transform: none !important;
-    font-family: 'Font Awesome 5 Free';
+    font-family: 'Hanna Air';
     font-weight: 900;
 }
 
@@ -2110,7 +2110,7 @@ input[type="radio"] + label:before {
     text-rendering: auto;
     line-height: 1;
     text-transform: none !important;
-    font-family: 'Font Awesome 5 Free';
+    font-family: 'Hanna Air';
     font-weight: 900;
 }
 
@@ -2202,7 +2202,7 @@ input[type="radio"] + label:before {
     text-rendering: auto;
     line-height: 1;
     text-transform: none !important;
-    font-family: 'Font Awesome 5 Free';
+    font-family: 'Hanna Air';
     font-weight: 400;
 }
 
@@ -2219,7 +2219,7 @@ input[type="radio"] + label:before {
 }
 
 .icon.brands:before {
-    font-family: 'Font Awesome 5 Brands';
+    font-family: 'Hanna Air';
 }
 
 .icon.major {
