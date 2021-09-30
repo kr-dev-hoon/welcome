@@ -81,7 +81,7 @@ html {
 html {
     background-color: #313a3d;
     background-attachment: fixed, fixed;
-    background-image: url("https://cdn.jsdelivr.net/gh/kr-dev-hoon/welcome/mainSets/images/overlay.png"), url("https://cdn.jsdelivr.net/gh/kr-dev-hoon/welcome/mainSets/images/2T3A9706.jpg");
+    background-image: url("https://cdn.jsdelivr.net/gh/kr-dev-hoon/welcome/mainSets/images/overlay.png"), url("../../images/2T3A9706.jpg");
     background-position: top left, center center;
     background-repeat: repeat, none;
     background-size: auto, cover;
@@ -113,7 +113,7 @@ html.is-touch #wrapper {
 
 body, input, select, textarea {
     color: #6f7577;
-    font-family: "Raleway", "Helvetica", sans-serif;
+    font-family: "Hanna Air";
     font-size: 15pt;
     font-weight: 400;
     line-height: 1.75em;
@@ -148,7 +148,16 @@ p {
     margin: 0 0 2em 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
+    color: #61686b;
+    font-weight: 500;
+    letter-spacing: 0.075em;
+    line-height: 1em;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+h2, h3, h4, h5, h6 {
     color: #61686b;
     font-weight: 450;
     letter-spacing: 0.075em;
@@ -1851,7 +1860,7 @@ html body:before {
     text-rendering: auto;
     line-height: 1;
     text-transform: none !important;
-    font-family: 'Font Awesome 5 Free';
+    font-family: 'Hanna Air';
     font-weight: 900;
 }
 
@@ -1965,7 +1974,7 @@ header.major h1, header.major h2, header.major h3, header.major h4, header.major
     position: relative;
 }
 
-header.major h2:after, header.major h3:after, header.major h4:after, header.major h5:after, header.major h6:after {
+header.major h1:after, header.major h2:after, header.major h3:after, header.major h4:after, header.major h5:after, header.major h6:after {
     background: #dddddd;
     content: '';
     display: block;
@@ -2101,7 +2110,7 @@ input[type="radio"] + label:before {
     text-rendering: auto;
     line-height: 1;
     text-transform: none !important;
-    font-family: 'Font Awesome 5 Free';
+    font-family: 'Hanna Air';
     font-weight: 900;
 }
 
@@ -2193,7 +2202,7 @@ input[type="radio"] + label:before {
     text-rendering: auto;
     line-height: 1;
     text-transform: none !important;
-    font-family: 'Font Awesome 5 Free';
+    font-family: 'Hanna Air';
     font-weight: 400;
 }
 
@@ -2210,7 +2219,7 @@ input[type="radio"] + label:before {
 }
 
 .icon.brands:before {
-    font-family: 'Font Awesome 5 Brands';
+    font-family: 'Hanna Air';
 }
 
 .icon.major {
@@ -2273,11 +2282,6 @@ input[type="radio"] + label:before {
 
 .image.fit img {
     width: 100%;
-}
-
-.image.fit:hover {
-    cursor: pointer;
-    opacity: 0.8;
 }
 
 /* List */
@@ -2801,22 +2805,26 @@ button:disabled,
 /* Header */
 
 #header {
-    height: 90vh;
+    height: 30vh;
     position: relative;
     text-align: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
 }
 
 #header:after {
     content: '';
     display: inline-block;
-    height: 90vh;
+    height: 30vh;
     vertical-align: middle;
 }
 
 #header header {
     color: rgba(255, 255, 255, 0.5);
     vertical-align: top;
-    margin-top:1em;
+    margin:0 auto;
 }
 
 #header header h1, #header header h2, #header header h3, #header header h4, #header header h5, #header header h6, #header header strong, #header header b {
@@ -2826,7 +2834,8 @@ button:disabled,
 #header header h1 {
     font-size: 3em;
     line-height: 1.25em;
-    margin-top: 1em;
+    margin: 55vh 0 1.5em 0;
+    padding: 2vh 2vw 0 2vw;
 }
 
 #header header a {
@@ -2837,6 +2846,7 @@ button:disabled,
     color: #ffffff;
     font-weight: 400;
     margin: 0 0 0 0;
+    padding: 0 2vw 1vh 2vw;
 }
 
 #header .container {
@@ -2912,17 +2922,13 @@ button:disabled,
 }
 
 /* Info */
-.mainInfo{
-    position: relative;
+#mainInfo{
     display: inline-block;
     color: #ffffff;
     font-weight: 400;
-    width: 80vw;
-    height: 15%;
     vertical-align: text-bottom;
-    text-align: right;
+    text-align: center;
     line-height: 1.5;
-    margin: 0 0 1em 0;
 }
 
 @media screen and (max-width: 12450px) {
@@ -2933,7 +2939,7 @@ button:disabled,
         font-size: 12pt;
     }
 
-    .mainInfo {
+    #mainInfo {
         font-size: 2em;
         margin-bottom :3em;
     }
@@ -2949,7 +2955,7 @@ button:disabled,
         font-size: 12pt;
     }
 
-    .mainInfo {
+    #mainInfo {
         font-size: 1.5em;
         margin-bottom :3em;
     }
@@ -2965,7 +2971,7 @@ button:disabled,
         font-size: 12pt;
     }
 
-    .mainInfo {
+    #mainInfo {
         font-size: 1.5em;
         margin-bottom :3em;
     }
@@ -3000,13 +3006,8 @@ button:disabled,
         line-height: 1.25em;
     }
 
-    .mainInfo {
+    #mainInfo {
         font-size: 1.5em;
-    }
-
-    /* Header */
-    #header header {
-        width: 80%;
     }
 
     #header .container {
@@ -3054,27 +3055,28 @@ button:disabled,
         display: none;
     }
 
-    .mainInfo {
+    #mainInfo {
         font-size: 1em;
+        margin-bottom: 1em;
     }
 
     /* Header */
     #header {
-        height: 90vh;
+        height: 30vh;
     }
 
     #header:after {
-        height: 90vh;
+        height: 30vh;
     }
 
     #header header {
         padding-bottom: 0;
+        margin:0 auto;
     }
 
     #header header h1 {
         font-size: 1.5em;
         line-height: 1.25em;
-        margin-top: 1em;
     }
 
     #header .container {
@@ -3095,6 +3097,11 @@ button:disabled,
     /* Basic */
     html, body {
         min-width: 320px;
+    }
+
+    #mainInfo {
+        font-size: 1em;
+        margin-bottom: 5vh;
     }
 
     /* List */

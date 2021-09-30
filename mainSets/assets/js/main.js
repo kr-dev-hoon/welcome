@@ -76,31 +76,6 @@
 
 			if (!browser.mobile) {
 
-				$window.on('load.hl_headerTitle', function() {
-
-					// breakpoints.on('>medium', function() {
-
-						$headerTitle
-							.css('padding-left', '8em');
-
-					// });
-					//
-					// breakpoints.on('<=medium', function() {
-					//
-					// 	$headerTitle
-					// 		.css('position', '')
-					// 		.css('height', '')
-					// 		.css('top', '')
-					// 		.css('left', '')
-					// 		.css('width', '')
-					// 		.css('margin-top', '');
-					//
-					// });
-
-					$window.off('load.hl_headerTitle');
-
-				});
-
 			}
 
 		// Scrollex.
@@ -112,15 +87,15 @@
 
 					},
 					scroll: function(progress) {
-						console.log(progress);
 
 						// Fade out title as user scrolls down.
-							if (progress > 0.5)
+							if (progress > 0.1) {
 								x = 1 - progress;
+								$headerTitle.css('opacity', Math.max(0, x * 1.3));
+							}
 							else
-								x = progress;
+								$headerTitle.css('opacity', '1');
 
-							$headerTitle.css('opacity', Math.max(0, Math.min(1, x * 2)));
 
 					}
 				});
