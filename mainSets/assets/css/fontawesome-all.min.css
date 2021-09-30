@@ -5791,6 +5791,22 @@
     src: url(../webfonts/BMHANNAAir_otf.otf);
 }
 
+@font-face {
+    font-family: "tvn regular";
+    font-style: normal;
+    font-weight: 900;
+    font-display: auto;
+    src: url(../webfonts/tvn-regular.otf);
+}
+
+@font-face {
+    font-family: "tvn light";
+    font-style: normal;
+    font-weight: 900;
+    font-display: auto;
+    src: url(../webfonts/tvn-light.otf);
+}
+
 .fa, .far, .fas {
     font-family: "Font Awesome 5 Free"
 }

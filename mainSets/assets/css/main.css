@@ -2836,6 +2836,7 @@ button:disabled,
     line-height: 1.25em;
     margin: 55vh 0 1.5em 0;
     padding: 2vh 2vw 0 2vw;
+    font-family: "tvn regular";
 }
 
 #header header a {
@@ -2847,6 +2848,7 @@ button:disabled,
     font-weight: 400;
     margin: 0 0 0 0;
     padding: 0 2vw 1vh 2vw;
+    font-family: "tvn light";
 }
 
 #header .container {
@@ -3004,6 +3006,7 @@ button:disabled,
     #header header h1 {
         font-size: 2em;
         line-height: 1.25em;
+        font-family: 'tvn regular';
     }
 
     #mainInfo {
@@ -3077,6 +3080,7 @@ button:disabled,
     #header header h1 {
         font-size: 1.5em;
         line-height: 1.25em;
+        font-family: 'tvn regular';
     }
 
     #header .container {
