@@ -2836,7 +2836,7 @@ button:disabled,
     line-height: 1.25em;
     margin: 55vh 0 1.5em 0;
     padding: 2vh 5vw 0 5vw;
-    font-family: "tvn regular";
+    font-family: "HSYuji-Regular";
 }
 
 #header header a {
@@ -2849,7 +2849,7 @@ button:disabled,
     font-weight: 400;
     margin: 0 0 0 0;
     padding: 0 5vw 1vh 5vw;
-    font-family: "tvn light";
+    font-family: "HSYuji-Regular";
 }
 
 #header .container {
@@ -3007,7 +3007,7 @@ button:disabled,
     #header header h1 {
         font-size: 2em;
         line-height: 1.25em;
-        font-family: 'tvn regular';
+        font-family: 'HSYuji-Regular';
     }
 
     #mainInfo {
@@ -3081,7 +3081,7 @@ button:disabled,
     #header header h1 {
         font-size: 1.5em;
         line-height: 1.25em;
-        font-family: 'tvn regular';
+        font-family: 'HSYuji-Regular';
     }
 
     #header .container {

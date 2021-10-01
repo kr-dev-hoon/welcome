@@ -5792,19 +5792,10 @@
 }
 
 @font-face {
-    font-family: "tvn regular";
+    font-family: 'HSYuji-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/HSYuji-Regular.woff') format('woff');
+    font-weight: lighter;
     font-style: normal;
-    font-weight: 900;
-    font-display: auto;
-    src: url(../webfonts/tvn-regular.otf);
-}
-
-@font-face {
-    font-family: "tvn light";
-    font-style: normal;
-    font-weight: 900;
-    font-display: auto;
-    src: url(../webfonts/tvn-light.otf);
 }
 
 .fa, .far, .fas {
