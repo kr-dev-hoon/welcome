@@ -5784,6 +5784,22 @@
 }
 
 @font-face {
+    font-family: "tvn light";
+    font-style: normal;
+    font-weight: 900;
+    font-display: auto;
+    src: url(../webfonts/tvn-light.otf);
+}
+
+@font-face {
+    font-family: "tvn medium";
+    font-style: normal;
+    font-weight: 900;
+    font-display: auto;
+    src: url(../webfonts/tvn-medium.otf);
+}
+
+@font-face {
     font-family: "Hanna Air";
     font-style: normal;
     font-weight: 900;

@@ -1974,7 +1974,19 @@ header.major h1, header.major h2, header.major h3, header.major h4, header.major
     position: relative;
 }
 
-header.major h1:after, header.major h2:after, header.major h3:after, header.major h4:after, header.major h5:after, header.major h6:after {
+header.major h1:after {
+    background: #dddddd;
+    content: '';
+    display: block;
+    height: 2px;
+    margin: 0.3em auto -0.8em auto;
+    position: relative;
+    width: 4em;
+    padding :0;
+}
+
+
+header.major h2:after, header.major h3:after, header.major h4:after, header.major h5:after, header.major h6:after {
     background: #dddddd;
     content: '';
     display: block;
@@ -2835,8 +2847,8 @@ button:disabled,
     font-size: 3em;
     line-height: 1.25em;
     margin: 55vh 0 1.5em 0;
-    padding: 2vh 5vw 0 5vw;
-    font-family: "HSYuji-Regular";
+    padding: 3vh 5vw 0 5vw;
+    font-family: "tvn light";
 }
 
 #header header a {
@@ -2848,8 +2860,8 @@ button:disabled,
     color: #ffffff;
     font-weight: 400;
     margin: 0 0 0 0;
-    padding: 0 5vw 1vh 5vw;
-    font-family: "HSYuji-Regular";
+    padding: 0 7vw 1vh 7vw;
+    font-family: "tvn medium";
 }
 
 #header .container {
@@ -3005,9 +3017,8 @@ button:disabled,
     }
 
     #header header h1 {
-        font-size: 2em;
         line-height: 1.25em;
-        font-family: 'HSYuji-Regular';
+        font-family: 'tvn light';
     }
 
     #mainInfo {
@@ -3079,9 +3090,9 @@ button:disabled,
     }
 
     #header header h1 {
-        font-size: 1.5em;
+        font-size: 2em;
         line-height: 1.25em;
-        font-family: 'HSYuji-Regular';
+        font-family: 'tvn light';
     }
 
     #header .container {
