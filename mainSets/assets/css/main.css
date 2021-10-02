@@ -124,7 +124,6 @@ a {
     -webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
     -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
     transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-    border-bottom: dotted 1px;
     color: #8cd1a8;
     text-decoration: none;
 }
@@ -3705,13 +3704,5 @@ body.is-menu-visible #menu .inner {
 
 #btnHide {
     color:#000000;
-    text-decoration: none !important;
-}
-
-#btnMore:hover {
-    text-decoration: none !important;
-}
-
-#btnHide:hover {
     text-decoration: none !important;
 }
