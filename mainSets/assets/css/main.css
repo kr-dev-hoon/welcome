@@ -104,9 +104,9 @@ html.is-touch {
 }
 
 html.is-touch #wrapper {
-    -webkit-backface-visibility: hidden;
-    -webkit-overflow-scrolling: touch;
-    -webkit-transform: translate3d(0, 0, 0);
+    /*-webkit-backface-visibility: hidden;*/
+    /*-webkit-overflow-scrolling: touch;*/
+    /*-webkit-transform: translate3d(0, 0, 0);*/
     height: 100vh;
     overflow: auto;
 }
