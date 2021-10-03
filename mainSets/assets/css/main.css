@@ -226,8 +226,21 @@ hr.custom {
 blockquote {
     border-left: solid 6px #dddddd;
     font-style: italic;
-    margin: 0 0 2em 0;
-    padding: 0.5em 0 0.5em 1.5em;
+    margin: 0 0 1em 0;
+    padding: 0.5em 0 0.5em 1em;
+    width: 100%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-align : left;
+}
+
+blockquote-overflow {
+    border-left: solid 6px #dddddd;
+    font-style: italic;
+    margin: 0 0 1em 0;
+    padding: 0.5em 0 0.5em 0.5em;
 }
 
 code {
@@ -1981,7 +1994,7 @@ header.major h1:after {
     margin: 0.3em auto -0.8em auto;
     position: relative;
     width: 4em;
-    padding :0;
+    padding: 0;
 }
 
 
@@ -1993,7 +2006,7 @@ header.major h2:after, header.major h3:after, header.major h4:after, header.majo
     margin: 0.75em auto -0.8em auto;
     position: relative;
     width: 4em;
-    padding :0;
+    padding: 0;
 }
 
 header.major p {
@@ -2905,7 +2918,7 @@ button:disabled,
 #header header {
     color: rgba(255, 255, 255, 0.5);
     vertical-align: top;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
 #header header h1, #header header h2, #header header h3, #header header h4, #header header h5, #header header h6, #header header strong, #header header b {
@@ -3010,7 +3023,7 @@ h2 span {
 }
 
 /* Info */
-#mainInfo{
+#mainInfo {
     display: inline-block;
     color: #ffffff;
     font-weight: 400;
@@ -3029,7 +3042,7 @@ h2 span {
 
     #mainInfo {
         font-size: 2em;
-        margin-bottom :3em;
+        margin-bottom: 3em;
     }
 
 }
@@ -3045,7 +3058,7 @@ h2 span {
 
     #mainInfo {
         font-size: 1.5em;
-        margin-bottom :3em;
+        margin-bottom: 3em;
     }
 
 }
@@ -3061,7 +3074,7 @@ h2 span {
 
     #mainInfo {
         font-size: 1.5em;
-        margin-bottom :3em;
+        margin-bottom: 3em;
     }
 
 }
@@ -3159,7 +3172,7 @@ h2 span {
 
     #header header {
         padding-bottom: 0;
-        margin:0 auto;
+        margin: 0 auto;
     }
 
     #header header h1 {
@@ -3646,11 +3659,11 @@ body.is-menu-visible #menu .inner {
 }
 
 .mg-1em {
-    margin-top:1em;
+    margin-top: 1em;
 }
 
 .mg-2em {
-    margin-top:2em;
+    margin-top: 2em;
 }
 
 .info {
@@ -3697,16 +3710,32 @@ body.is-menu-visible #menu .inner {
     }
     to {
         opacity: 0;
-        visibility:hidden;
+        visibility: hidden;
     }
 }
 
 #btnMore {
-    color:#000000;
+    color: #000000;
     text-decoration: none !important;
 }
 
 #btnHide {
-    color:#000000;
+    color: #000000;
     text-decoration: none !important;
+}
+
+.book {
+    margin: 0 0 1.5em 0;
+}
+
+.book p {
+    margin: 0 0 1em 0;
+    text-align: left;
+    line-height: 0.25em;
+}
+
+.wtdate {
+    display: block;
+    text-align: right;
+    font-size: 0.8em;
 }
