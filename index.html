@@ -291,15 +291,6 @@
         <h5 style="color: gray">신랑﹒신부에게 축하의 한마디를 적어주세요!</h5>
         <form action="javascript:write();">
             <div class="row gtr-uniform">
-                <!--                <div class="col-12">-->
-                <!--                    <select name="demo-category" id="demo-category">-->
-                <!--                        <option value="1" disabled selected hidden>신랑﹒신부와의 관계</option>-->
-                <!--                        <option value="1">신랑 지인</option>-->
-                <!--                        <option value="2">신부 지인</option>-->
-                <!--                        <option value="3">신랑 혼주 지인</option>-->
-                <!--                        <option value="4">신부 혼주 지인</option>-->
-                <!--                    </select>-->
-                <!--                </div>-->
                 <div class="col-12"><input type="text" name="name" id="name" placeholder="Name"/></div>
                 <div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea>
                 </div>
@@ -313,10 +304,11 @@
         <hr class="custom"/>
         <div id="guest-book">
         </div>
+
         <div id="move-comment" class="col-12">
             <ul class="actions special">
-                <li><input id="preComments" type="submit" value="이전" onclick="javascript:readComments()" style="display: none;"/></li>
-                <li><input id="nextComments" type="submit" value="다음" onclick="javascript:readComments()" style="display: none;"/></li>
+                <li><input id="preComments" class="button fit small" type="submit" value="이전" onclick="javascript:readComments()" style="display: none;"/></li>
+                <li><input id="nextComments" class="button primary fit small" type="submit" value="다음" onclick="javascript:readComments()" style="display: none;"/></li>
             </ul>
         </div>
     </div>
@@ -348,7 +340,7 @@
             entries.forEach(entry => {
                 if (entry.target.scrollHeight > entry.target.clientHeight) {
                     document.getElementById(entry.target.id).innerHTML =
-                        document.getElementById(entry.target.id).innerHTML + '<a href ="javascript:info_photo();" style="font-size:0.8em">더보기</a>';
+                        document.getElementById(entry.target.id).innerHTML + '<a href ="javascript:swapMore('+entry.target.id+', none);" style="font-size:0.8em">더보기</a>';
                 }
             })
         });
@@ -365,6 +357,13 @@
         timeOut: 2000,
         positionClass: 'toast-bottom-center'
     };
+
+    function swapMore(id, value) {
+        var btn = document.getElementById(id);
+        btn.css('-webkit-line-clamp',value);
+        btn.href = 'javascript:swapMore('+entry.target.id+', 3)';
+        btn.innerText = '감추기';
+    }
 
     function copy_to_clipboard(id) {
         var temp = document.createElement('textarea');
@@ -391,10 +390,12 @@
         var guestBook = document.getElementById('guest-book');
 
         $.ajax({
-            url: "http://localhost:5001/comment-c8188/us-central1/helloWorld",
+            url: "https://us-central1-comment-c8188.cloudfunctions.net/comments",
             type: "get",
             dataType: "json",
             success: function (response) {
+
+                guestBook.innerHTML = '';
 
                 if (response.length > size * page) {
                     document.getElementById("nextComments").style.display = "block";

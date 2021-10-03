@@ -2514,7 +2514,7 @@ ul.actions.fit.stacked {
 }
 
 ul.actions.half li > * {
-    width: 100%;
+    width: 80%;
 }
 
 @media screen and (max-width: 480px) {
