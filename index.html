@@ -86,7 +86,7 @@
             <header class="major">
                 <h2>일정</h2>
             </header>
-            <span class="image fit primary mg-1em"><img src="mainSets/images/unnamed.jpg" alt=""/></span>
+            <span class="image fit primary mg-1em"><img src="mainSets/images/wedding.jpeg" alt=""/></span>
             <section>
                 <div class="table-wrapper">
                     <table class="alt">
@@ -289,7 +289,7 @@
             <h2>방명록</h2>
         </header>
         <h5 style="color: gray">신랑﹒신부에게 축하의 한마디를 적어주세요!</h5>
-        <form action="javascript:sendMessage();">
+        <form action="javascript:write();">
             <div class="row gtr-uniform">
                 <!--                <div class="col-12">-->
                 <!--                    <select name="demo-category" id="demo-category">-->
@@ -312,33 +312,14 @@
         </form>
         <hr class="custom"/>
         <div id="guest-book">
-            <div id="books-1" class="book">
-                <p>장범준
-                    <span class="wtdate">2021.08.00 11:00:00</span>
-                </p>
-                <blockquote class="comments" id="com1">Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt
-                    felis sagittis
-                    eget tempus
-                    euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis
-                    volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor
-                    sit amet nullam adipiscing eu felis.
-                </blockquote>
-            </div>
-            <div id="books-2" class="book">
-                <p>장범준
-                    <span class="wtdate">2021.08.00 11:00:00</span>
-                </p>
-                <blockquote class="comments" id="com2">Fringilla nisl.</blockquote>
-            </div>
         </div>
-        <div class="col-12">
+        <div id="move-comment" class="col-12">
             <ul class="actions special">
-                <li><input id="moreComments" type="submit" value="더보기"/></li>
+                <li><input id="preComments" type="submit" value="이전" onclick="javascript:readComments()" style="display: none;"/></li>
+                <li><input id="nextComments" type="submit" value="다음" onclick="javascript:readComments()" style="display: none;"/></li>
             </ul>
         </div>
     </div>
-<!--    <footer>-->
-<!--    </footer>-->
 </section>
 
 <!-- Scripts -->
@@ -354,6 +335,11 @@
 
 <script type="text/javascript">
 
+    var page = 1;
+    var size = 5;
+
+    readComments();
+
     document.addEventListener('DOMContentLoaded', function () {
 
         var ps = document.getElementsByClassName('comments');
@@ -361,8 +347,8 @@
         const observer = new ResizeObserver(entries => {
             entries.forEach(entry => {
                 if (entry.target.scrollHeight > entry.target.clientHeight) {
-                    // document.getElementById(entry.target.id).innerHTML =
-                    //     document.getElementById(entry.target.id).innerHTML + '<a href ="javascript:info_photo();" style="font-size:0.8em">더보기</a>';
+                    document.getElementById(entry.target.id).innerHTML =
+                        document.getElementById(entry.target.id).innerHTML + '<a href ="javascript:info_photo();" style="font-size:0.8em">더보기</a>';
                 }
             })
         });
@@ -399,7 +385,65 @@
 
     }
 
-    function sendMessage() {
+    function readComments() {
+
+        var comments;
+        var guestBook = document.getElementById('guest-book');
+
+        $.ajax({
+            url: "http://localhost:5001/comment-c8188/us-central1/helloWorld",
+            type: "get",
+            dataType: "json",
+            success: function (response) {
+
+                if (response.length > size * page) {
+                    document.getElementById("nextComments").style.display = "block";
+                }
+
+                if (page > 1) {
+                    document.getElementById("preComments").style.display = "block";
+                }
+
+                if(document.getElementById("nextComments").style.display === 'none' && document.getElementById("preComments").style.display === 'none') {
+                    document.getElementById("move-comment").style.display = "none";
+                }
+
+                response.forEach((com, index, res) => {
+
+                    var fullDate = new Date(parseInt(com._id.toString().substring(0, 8), 16) * 1000);
+
+                    var div = document.createElement('div');
+                    var p = document.createElement('p');
+                    var span = document.createElement('span');
+                    var block = document.createElement('blockquote');
+
+                    span.className = 'wtdate';
+                    span.innerText = forPrint(fullDate);
+
+                    block.innerText = com.message;
+                    block.className = comments;
+                    block.id = 'com' + index;
+                    p.innerText = com.name;
+
+                    div.id = 'books' + index;
+                    div.className = 'book';
+
+                    p.appendChild(span);
+                    div.appendChild(p);
+                    div.appendChild(block)
+
+                    guestBook.appendChild(div);
+                })
+            },
+            error: function (e) {
+                console.log('error!');
+                console.log(e);
+                document.getElementById("quest-book").style.display = "none";
+            }
+        });
+    }
+
+    function write() {
 
         if (document.getElementById("message").value === '') {
             toastr.error('Message를 입력해주세요.');
@@ -473,6 +517,15 @@
             }, 500);
         }
     }
+
+    function forPrint(date) {
+        function pad(n) {
+            return n < 10 ? "0" + n : n
+        }
+
+        return date.getFullYear() + "-" + pad(date.getMonth() + 1) + "-" + pad(date.getDate()) + " " + pad(date.getHours()) + ":" + pad(date.getMinutes()) + ":" + pad(date.getSeconds());
+    }
+
 
 </script>
 
