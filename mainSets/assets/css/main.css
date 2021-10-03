@@ -226,8 +226,8 @@ hr.custom {
 blockquote {
     border-left: solid 6px #dddddd;
     font-style: italic;
-    margin: 0 0 1em 0;
-    padding: 0.5em 0 0.5em 1em;
+    margin: 0;
+    padding: 0.5em 0 0 1em;
     width: 100%;
     overflow: hidden;
     display: -webkit-box;

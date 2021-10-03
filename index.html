@@ -310,12 +310,14 @@
                 </div>
             </div>
         </form>
+        <hr class="custom"/>
         <div id="guest-book">
             <div id="books-1" class="book">
                 <p>장범준
                     <span class="wtdate">2021.08.00 11:00:00</span>
                 </p>
-                <blockquote id="getCss1">Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis
+                <blockquote class="comments" id="com1">Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt
+                    felis sagittis
                     eget tempus
                     euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis
                     volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor
@@ -326,8 +328,13 @@
                 <p>장범준
                     <span class="wtdate">2021.08.00 11:00:00</span>
                 </p>
-                <blockquote id="getCss2">Fringilla nisl.</blockquote>
+                <blockquote class="comments" id="com2">Fringilla nisl.</blockquote>
             </div>
+        </div>
+        <div class="col-12">
+            <ul class="actions special">
+                <li><input id="moreComments" type="submit" value="더보기"/></li>
+            </ul>
         </div>
     </div>
     <footer>
@@ -347,16 +354,24 @@
 
 <script type="text/javascript">
 
-    // document.addEventListener("DOMContentLoaded", function () {
-    //
-    //     var ps = document.getElementById('getCss1');
-    //     var height = document.defaultView.getComputedStyle(ps, null).getPropertyValue("lineHeight");
-    //
-    //     console.log(ps.offsetHeight);
-    //     console.log(height);
-    //
-    // });
+    document.addEventListener('DOMContentLoaded', function () {
 
+        var ps = document.getElementsByClassName('comments');
+
+        const observer = new ResizeObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.target.scrollHeight > entry.target.clientHeight) {
+                    // document.getElementById(entry.target.id).innerHTML =
+                    //     document.getElementById(entry.target.id).innerHTML + '<a href ="javascript:info_photo();" style="font-size:0.8em">더보기</a>';
+                }
+            })
+        });
+
+        Array.from(ps).forEach(p => {
+            observer.observe(p);
+        });
+
+    });
 
     toastr.options = {
         preventDuplicates: true,
