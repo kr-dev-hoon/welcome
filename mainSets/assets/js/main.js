@@ -58,7 +58,7 @@
 			// Enable touch mode.
 				$html.addClass('is-touch');
 
-				$html.css('background-image','none');
+				// $html.css('background-image','none');
 
 		}
 		else {
