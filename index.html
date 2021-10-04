@@ -401,7 +401,7 @@
 
     function readComments() {
 
-        if (comments.isEmptyObject()) {
+        if (comments === undefined) {
 
             $.ajax({
                 url: "https://us-central1-comment-c8188.cloudfunctions.net/comments",
