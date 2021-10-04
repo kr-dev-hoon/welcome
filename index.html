@@ -308,10 +308,10 @@
         <div id="move-comment" class="col-12">
             <ul class="actions special" style="margin-bottom: 0 !important;">
                 <li style="padding :0 !important;"><input id="preComments" class="button fit small" type="submit"
-                                                          value="이전" onclick="javascript:readComments()"
+                                                          value="이전" onclick="javascript:previous()"
                                                           style="display: none; margin-bottom: 0;"/></li>
                 <li style="padding :0 !important;"><input id="nextComments" class="button primary fit small"
-                                                          type="submit" value="다음" onclick="javascript:readComments()"
+                                                          type="submit" value="다음" onclick="javascript:next()"
                                                           style="display: none; margin-bottom: 0;"/></li>
             </ul>
         </div>
@@ -343,6 +343,17 @@
         timeOut: 2000,
         positionClass: 'toast-bottom-center'
     };
+
+    function next() {
+        page += 1;
+        readComments();
+
+    }
+
+    function previous() {
+        page -= 1;
+        readComments();
+    }
 
     function makeMoreBtn() {
         var ps = document.getElementsByClassName('comments');
@@ -390,71 +401,31 @@
 
     function readComments() {
 
-        var guestBook = document.getElementById('guest-book');
+        if (comments.isEmptyObject()) {
 
-        $.ajax({
-            url: "https://us-central1-comment-c8188.cloudfunctions.net/comments",
-            type: "get",
-            dataType: "json",
-            success: function (response) {
+            $.ajax({
+                url: "https://us-central1-comment-c8188.cloudfunctions.net/comments",
+                type: "get",
+                dataType: "json",
+                success: function (response) {
 
-                guestBook.innerHTML = '';
+                    comments = response;
+                    refresh();
 
-                comments = response;
-
-                if (response.length > size * page) {
-                    document.getElementById("nextComments").style.display = "block";
+                },
+                error: function (e) {
+                    console.log('error!');
+                    console.log(e);
+                    document.getElementById("guest-book").style.display = "none";
+                },
+                complete() {
+                    makeMoreBtn();
                 }
+            });
+        } else {
+            refresh();
+        }
 
-                if (page > 1) {
-                    document.getElementById("preComments").style.display = "block";
-                }
-
-                if (document.getElementById("nextComments").style.display === 'none' && document.getElementById("preComments").style.display === 'none') {
-                    document.getElementById("move-comment").style.display = "none";
-                }
-
-                response.slice(0, 5).forEach((com, index, res) => {
-
-                    var fullDate = new Date(parseInt(com._id.toString().substring(0, 8), 16) * 1000);
-
-                    var div = document.createElement('div');
-                    var p = document.createElement('p');
-                    var span = document.createElement('span');
-                    var block = document.createElement('blockquote');
-                    var a = document.createElement('a');
-
-                    a.id = 'a-' + 'com' + index;
-                    a.className = 'moreBtn';
-
-                    span.className = 'wtdate';
-                    span.innerText = forPrint(fullDate);
-
-                    block.innerText = com.message;
-                    block.className = 'comments';
-                    block.id = 'com' + index;
-                    p.innerText = com.name;
-
-                    div.id = 'books' + index;
-                    div.className = 'book';
-
-                    p.appendChild(span);
-                    div.appendChild(p);
-                    div.appendChild(block)
-                    div.appendChild(a);
-
-                    guestBook.appendChild(div);
-                })
-            },
-            error: function (e) {
-                console.log('error!');
-                console.log(e);
-                document.getElementById("guest-book").style.display = "none";
-            },
-            complete() {
-                makeMoreBtn();
-            }
-        });
     }
 
     function write() {
@@ -467,8 +438,6 @@
         document.getElementById("sendMessage").classList.remove('primary');
         document.getElementById("sendMessage").setAttribute("disabled", "disabled");
         document.getElementById("sendMessage").value = "작성중...";
-
-        var category = document.getElementById("demo-category");
 
         var name = document.getElementById("name").value;
         var message = document.getElementById("message").value;
@@ -502,6 +471,57 @@
                 toastr.error('죄송합니다.<br/>다시 시도해주세요.');
             }
         });
+    }
+
+    function refresh() {
+
+        var guestBook = document.getElementById('guest-book');
+
+        if (comments.length > size * page) {
+            document.getElementById("nextComments").style.display = "block";
+        }
+
+        if (page > 1) {
+            document.getElementById("preComments").style.display = "block";
+        }
+
+        if (document.getElementById("nextComments").style.display === 'none' && document.getElementById("preComments").style.display === 'none') {
+            document.getElementById("move-comment").style.display = "none";
+        }
+
+        comments.slice((page - 1) * size, page * size - 1).forEach((com, index, res) => {
+
+            guestBook.innerHTML = '';
+
+            var fullDate = new Date(parseInt(com._id.toString().substring(0, 8), 16) * 1000);
+
+            var div = document.createElement('div');
+            var p = document.createElement('p');
+            var span = document.createElement('span');
+            var block = document.createElement('blockquote');
+            var a = document.createElement('a');
+
+            a.id = 'a-' + 'com' + index;
+            a.className = 'moreBtn';
+
+            span.className = 'wtdate';
+            span.innerText = forPrint(fullDate);
+
+            block.innerText = com.message;
+            block.className = 'comments';
+            block.id = 'com' + index;
+            p.innerText = com.name;
+
+            div.id = 'books' + index;
+            div.className = 'book';
+
+            p.appendChild(span);
+            div.appendChild(p);
+            div.appendChild(block)
+            div.appendChild(a);
+
+            guestBook.appendChild(div);
+        })
     }
 
     function info_photo() {
