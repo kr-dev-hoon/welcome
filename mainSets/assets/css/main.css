@@ -236,11 +236,9 @@ blockquote {
     text-align : left;
 }
 
-blockquote-overflow {
-    border-left: solid 6px #dddddd;
-    font-style: italic;
-    margin: 0 0 1em 0;
-    padding: 0.5em 0 0.5em 0.5em;
+.noneOverflow {
+    -webkit-line-clamp: none !important;
+    display: block !important;
 }
 
 code {
@@ -3738,4 +3736,10 @@ body.is-menu-visible #menu .inner {
     display: block;
     text-align: right;
     font-size: 0.8em;
+}
+
+.moreBtn {
+    font-size : 0.8em;
+    display: block;
+    text-align: right;
 }

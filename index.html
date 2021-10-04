@@ -343,35 +343,29 @@
         positionClass: 'toast-bottom-center'
     };
 
-    function moreBtn() {
+    function makeMoreBtn() {
         var ps = document.getElementsByClassName('comments');
 
-        console.log(ps);
-
-        const observer = new ResizeObserver(entries => {
-            entries.forEach(entry => {
-
-                console.log('id : ' + entry.target.id);
-                console.log('scrollHeight : ' + entry.target.scrollHeight);
-                console.log('clientHeight : ' + entry.target.clientHeight);
-
-                if (entry.target.scrollHeight > entry.target.clientHeight) {
-                    document.getElementById(entry.target.id).innerHTML =
-                        document.getElementById(entry.target.id).innerHTML + '<a href ="javascript:swapMore(' + entry.target.id + ', none);" style="font-size:0.8em">더보기</a>';
-                }
-            })
-        });
-
-        Array.from(ps).forEach(p => {
-            observer.observe(p);
-        });
+        for (let index = 0; index < ps.length; index++) {
+            var com = ps[index];
+            if (com.scrollHeight > com.clientHeight) {
+                document.getElementById('a-' + com.id).href = 'javascript:swapMore(\'' + com.id + '\')';
+                document.getElementById('a-' + com.id).innerText = '더보기';
+            }
+        }
     }
 
-    function swapMore(id, value) {
-        var btn = document.getElementById(id);
-        btn.css('-webkit-line-clamp', value);
-        btn.href = 'javascript:swapMore(' + entry.target.id + ', 3)';
-        btn.innerText = '감추기';
+    function swapMore(id) {
+        var txt = document.getElementById(id);
+        var aTag = document.getElementById('a-' + id);
+
+        if (!txt.classList.contains('noneOverflow')) {
+            txt.classList.add('noneOverflow');
+            aTag.innerText = '감추기';
+        } else {
+            txt.classList.remove('noneOverflow');
+            aTag.innerText = '더보기';
+        }
     }
 
     function copy_to_clipboard(id) {
@@ -424,7 +418,11 @@
                     var div = document.createElement('div');
                     var p = document.createElement('p');
                     var span = document.createElement('span');
-                    var block = document.createElement('blockquote');
+                    var block = document.createElement('blockquote');가
+                    var a = document.createElement('a');
+
+                    a.id = 'a-' + 'com' + index;
+                    a.className = 'moreBtn';
 
                     span.className = 'wtdate';
                     span.innerText = forPrint(fullDate);
@@ -440,6 +438,7 @@
                     p.appendChild(span);
                     div.appendChild(p);
                     div.appendChild(block)
+                    div.appendChild(a);
 
                     guestBook.appendChild(div);
                 })
@@ -448,9 +447,11 @@
                 console.log('error!');
                 console.log(e);
                 document.getElementById("guest-book").style.display = "none";
+            },
+            complete() {
+                makeMoreBtn();
             }
         });
-        moreBtn();
     }
 
     function write() {
