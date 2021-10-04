@@ -338,8 +338,12 @@
 
         const observer = new ResizeObserver(entries => {
             entries.forEach(entry => {
+
+                console.log('id : '+entry.target.id);
+                console.log('scrollHeight : '+entry.target.scrollHeight);
+                console.log('clientHeight : '+entry.target.clientHeight);
+
                 if (entry.target.scrollHeight > entry.target.clientHeight) {
-                    console.log(entry.target.id);
                     document.getElementById(entry.target.id).innerHTML =
                         document.getElementById(entry.target.id).innerHTML + '<a href ="javascript:swapMore('+entry.target.id+', none);" style="font-size:0.8em">더보기</a>';
                 }
