@@ -411,10 +411,8 @@
                 type: "get",
                 dataType: "json",
                 success: function (response) {
-
                     comments = response;
                     refresh();
-
                 },
                 error: function (e) {
                     console.log('error!');
@@ -455,11 +453,10 @@
             dataType: "json",
             contentType: "application/json",
             data: JSON.stringify(requestData),
-            success: function () {
-                toastr.info('축하메시지가 발송되었습니다.<br/>감사합니다.');
+            success: function (result) {
+                toastr.info('감사합니다.<br/>');
                 document.getElementById("name").value = '';
                 document.getElementById("message").value = '';
-                document.getElementById("demo-category").selectedIndex = 0;
             },
             complete: function () {
                 document.getElementById("sendMessage").classList.add('primary');
@@ -499,8 +496,6 @@
         }
 
         comments.slice((page - 1) * size, page * size).forEach((com, index, res) => {
-
-            console.log(index);
 
             var fullDate = new Date(parseInt(com._id.toString().substring(0, 8), 16) * 1000);
 
