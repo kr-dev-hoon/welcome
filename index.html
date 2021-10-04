@@ -469,16 +469,14 @@
 
         var name = document.getElementById("name").value;
         var message = document.getElementById("message").value;
-        var relation = category.options[category.selectedIndex].value || "1";
 
         var requestData = new Object();
 
         requestData.name = name;
         requestData.message = message;
-        requestData.relation = relation;
 
         $.ajax({
-            url: "https://modest-volhard-6a5603.netlify.app/.netlify/functions/slack",
+            url: "https://us-central1-comment-c8188.cloudfunctions.net/comment",
             type: "post",
             dataType: "json",
             contentType: "application/json",
@@ -493,6 +491,7 @@
                 document.getElementById("sendMessage").classList.add('primary');
                 document.getElementById("sendMessage").removeAttribute("disabled");
                 document.getElementById("sendMessage").value = "축하하기";
+                readComments();
             },
             error: function (e) {
                 console.log('error!');
