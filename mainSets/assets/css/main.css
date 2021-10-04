@@ -2489,6 +2489,7 @@ ul.actions.fit li {
 
 ul.actions.half {
     width: calc(100% + 1em);
+    margin : 0 !important;
 }
 
 ul.actions.half li {
@@ -2501,6 +2502,7 @@ ul.actions.half li {
     -ms-flex-shrink: 1;
     flex-shrink: 1;
     width: 50%;
+    margin : 0 !important;
 }
 
 ul.actions.fit li > * {

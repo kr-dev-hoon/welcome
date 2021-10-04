@@ -306,13 +306,17 @@
         </div>
 
         <div id="move-comment" class="col-12">
-            <ul class="actions special" style="margin-bottom: 0 !important;">
-                <li style="padding :0 !important;"><input id="preComments" class="button fit small" type="submit"
-                                                          value="이전" onclick="javascript:previous()"
-                                                          style="display: none; margin-bottom: 0;"/></li>
-                <li style="padding :0 !important;"><input id="nextComments" class="button primary fit small"
-                                                          type="submit" value="다음" onclick="javascript:next()"
-                                                          style="display: none; margin-bottom: 0;"/></li>
+            <ul class="actions half fixed" style="margin-bottom: 0 !important;">
+                <li id="preComments" style="padding :0 !important; display: none;"><input class="small" type="submit"
+                                                                                          value="이전"
+                                                                                          onclick="previous()"
+                                                                                          style="margin-bottom: 0;"/>
+                </li>
+                <li id="nextComments" style="padding :0 !important; display: none;"><input class="primary small"
+                                                                                           type="submit" value="다음"
+                                                                                           onclick="next()"
+                                                                                           style="margin-bottom: 0;"/>
+                </li>
             </ul>
         </div>
     </div>
@@ -478,21 +482,27 @@
 
         var guestBook = document.getElementById('guest-book');
 
+        guestBook.innerHTML = '';
+
         if (comments.length > size * page) {
             document.getElementById("nextComments").style.display = "block";
+        } else {
+            document.getElementById("nextComments").style.display = "none";
         }
 
         if (page > 1) {
             document.getElementById("preComments").style.display = "block";
+        } else {
+            document.getElementById("preComments").style.display = "none";
         }
 
         if (document.getElementById("nextComments").style.display === 'none' && document.getElementById("preComments").style.display === 'none') {
             document.getElementById("move-comment").style.display = "none";
         }
 
-        comments.slice((page - 1) * size, page * size - 1).forEach((com, index, res) => {
+        comments.slice((page - 1) * size, page * size).forEach((com, index, res) => {
 
-            guestBook.innerHTML = '';
+            console.log(index);
 
             var fullDate = new Date(parseInt(com._id.toString().substring(0, 8), 16) * 1000);
 
