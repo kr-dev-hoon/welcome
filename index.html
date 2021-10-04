@@ -333,6 +333,7 @@
 
     var page = 1;
     var size = 5;
+    var comments;
 
     readComments();
 
@@ -399,6 +400,8 @@
 
                 guestBook.innerHTML = '';
 
+                comments = response;
+
                 if (response.length > size * page) {
                     document.getElementById("nextComments").style.display = "block";
                 }
@@ -411,7 +414,7 @@
                     document.getElementById("move-comment").style.display = "none";
                 }
 
-                response.forEach((com, index, res) => {
+                response.slice(0, 5).forEach((com, index, res) => {
 
                     var fullDate = new Date(parseInt(com._id.toString().substring(0, 8), 16) * 1000);
 
