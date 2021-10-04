@@ -302,13 +302,13 @@
             </div>
         </form>
         <hr class="custom"/>
-        <div id="guest-book">
+        <div id="guest-book" style="margin-top : 2em;">
         </div>
 
         <div id="move-comment" class="col-12">
-            <ul class="actions special">
-                <li><input id="preComments" class="button fit small" type="submit" value="이전" onclick="javascript:readComments()" style="display: none;"/></li>
-                <li><input id="nextComments" class="button primary fit small" type="submit" value="다음" onclick="javascript:readComments()" style="display: none;"/></li>
+            <ul class="actions special" style="margin-bottom: 0 !important;">
+                <li style="padding :0 !important;"><input id="preComments" class="button fit small" type="submit" value="이전" onclick="javascript:readComments()" style="display: none; margin-bottom: 0;"/></li>
+                <li style="padding :0 !important;"><input id="nextComments" class="button primary fit small" type="submit" value="다음" onclick="javascript:readComments()" style="display: none; margin-bottom: 0;"/></li>
             </ul>
         </div>
     </div>
@@ -339,6 +339,7 @@
         const observer = new ResizeObserver(entries => {
             entries.forEach(entry => {
                 if (entry.target.scrollHeight > entry.target.clientHeight) {
+                    console.log(entry.target.id);
                     document.getElementById(entry.target.id).innerHTML =
                         document.getElementById(entry.target.id).innerHTML + '<a href ="javascript:swapMore('+entry.target.id+', none);" style="font-size:0.8em">더보기</a>';
                 }
@@ -386,7 +387,6 @@
 
     function readComments() {
 
-        var comments;
         var guestBook = document.getElementById('guest-book');
 
         $.ajax({
@@ -422,7 +422,7 @@
                     span.innerText = forPrint(fullDate);
 
                     block.innerText = com.message;
-                    block.className = comments;
+                    block.className = 'comments';
                     block.id = 'com' + index;
                     p.innerText = com.name;
 
