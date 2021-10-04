@@ -351,7 +351,6 @@
     function next() {
         page += 1;
         readComments();
-
     }
 
     function previous() {
@@ -421,14 +420,13 @@
                     console.log('error!');
                     console.log(e);
                     document.getElementById("guest-book").style.display = "none";
-                },
-                complete() {
-                    makeMoreBtn();
                 }
             });
         } else {
             refresh();
         }
+
+        makeMoreBtn();
 
     }
 
