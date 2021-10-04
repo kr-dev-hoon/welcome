@@ -307,8 +307,12 @@
 
         <div id="move-comment" class="col-12">
             <ul class="actions special" style="margin-bottom: 0 !important;">
-                <li style="padding :0 !important;"><input id="preComments" class="button fit small" type="submit" value="이전" onclick="javascript:readComments()" style="display: none; margin-bottom: 0;"/></li>
-                <li style="padding :0 !important;"><input id="nextComments" class="button primary fit small" type="submit" value="다음" onclick="javascript:readComments()" style="display: none; margin-bottom: 0;"/></li>
+                <li style="padding :0 !important;"><input id="preComments" class="button fit small" type="submit"
+                                                          value="이전" onclick="javascript:readComments()"
+                                                          style="display: none; margin-bottom: 0;"/></li>
+                <li style="padding :0 !important;"><input id="nextComments" class="button primary fit small"
+                                                          type="submit" value="다음" onclick="javascript:readComments()"
+                                                          style="display: none; margin-bottom: 0;"/></li>
             </ul>
         </div>
     </div>
@@ -332,28 +336,24 @@
 
     readComments();
 
-    document.addEventListener('DOMContentLoaded', function () {
+    var ps = document.getElementsByClassName('comments');
 
-        var ps = document.getElementsByClassName('comments');
+    const observer = new ResizeObserver(entries => {
+        entries.forEach(entry => {
 
-        const observer = new ResizeObserver(entries => {
-            entries.forEach(entry => {
+            console.log('id : ' + entry.target.id);
+            console.log('scrollHeight : ' + entry.target.scrollHeight);
+            console.log('clientHeight : ' + entry.target.clientHeight);
 
-                console.log('id : '+entry.target.id);
-                console.log('scrollHeight : '+entry.target.scrollHeight);
-                console.log('clientHeight : '+entry.target.clientHeight);
+            if (entry.target.scrollHeight > entry.target.clientHeight) {
+                document.getElementById(entry.target.id).innerHTML =
+                    document.getElementById(entry.target.id).innerHTML + '<a href ="javascript:swapMore(' + entry.target.id + ', none);" style="font-size:0.8em">더보기</a>';
+            }
+        })
+    });
 
-                if (entry.target.scrollHeight > entry.target.clientHeight) {
-                    document.getElementById(entry.target.id).innerHTML =
-                        document.getElementById(entry.target.id).innerHTML + '<a href ="javascript:swapMore('+entry.target.id+', none);" style="font-size:0.8em">더보기</a>';
-                }
-            })
-        });
-
-        Array.from(ps).forEach(p => {
-            observer.observe(p);
-        });
-
+    Array.from(ps).forEach(p => {
+        observer.observe(p);
     });
 
     toastr.options = {
@@ -365,8 +365,8 @@
 
     function swapMore(id, value) {
         var btn = document.getElementById(id);
-        btn.css('-webkit-line-clamp',value);
-        btn.href = 'javascript:swapMore('+entry.target.id+', 3)';
+        btn.css('-webkit-line-clamp', value);
+        btn.href = 'javascript:swapMore(' + entry.target.id + ', 3)';
         btn.innerText = '감추기';
     }
 
@@ -409,7 +409,7 @@
                     document.getElementById("preComments").style.display = "block";
                 }
 
-                if(document.getElementById("nextComments").style.display === 'none' && document.getElementById("preComments").style.display === 'none') {
+                if (document.getElementById("nextComments").style.display === 'none' && document.getElementById("preComments").style.display === 'none') {
                     document.getElementById("move-comment").style.display = "none";
                 }
 
