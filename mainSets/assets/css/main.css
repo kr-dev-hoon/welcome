@@ -307,6 +307,10 @@ pre code {
     width: 100%;
 }
 
+.container.boxes {
+    text-align: center !important;
+}
+
 @media screen and (max-width: 980px) {
 
     .container {
@@ -3744,4 +3748,21 @@ body.is-menu-visible #menu .inner {
     font-size : 0.8em;
     display: block;
     text-align: right;
+}
+
+.loader {
+    border: 4px solid #f3f3f3; /* Light grey */
+    border-top: 4px solid #8cd1a8; /* Blue */
+    border-radius: 50%;
+    height: 30px;
+    animation: spin 2s linear infinite;
+}
+
+.loader.bk {
+    border-top: 4px solid #000000; /* Blue */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
