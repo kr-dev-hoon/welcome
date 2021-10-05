@@ -81,7 +81,7 @@ html {
 html {
     background-color: #313a3d;
     background-attachment: fixed, fixed;
-    background-image: url("https://cdn.jsdelivr.net/gh/kr-dev-hoon/welcome/mainSets/images/overlay.png"), url("../../images/2T3A9706.jpg");
+    background-image: url("https://cdn.jsdelivr.net/gh/kr-dev-hoon/welcome/mainSets/assets/css/images/overlay.png"), url("https://cdn.jsdelivr.net/gh/kr-dev-hoon/welcome/mainSets/images/2T3A9706.jpg");
     background-position: top left, center center;
     background-repeat: repeat, none;
     background-size: auto, cover;

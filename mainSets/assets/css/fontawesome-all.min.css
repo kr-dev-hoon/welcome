@@ -5788,7 +5788,7 @@
     font-style: normal;
     font-weight: 900;
     font-display: auto;
-    src: url(../webfonts/tvn-light.otf);
+    src: url(https://cdn.jsdelivr.net/gh/kr-dev-hoon/welcome/mainSets/assets/webfonts/tvn-light.otf);
 }
 
 @font-face {
@@ -5796,7 +5796,7 @@
     font-style: normal;
     font-weight: 900;
     font-display: auto;
-    src: url(../webfonts/tvn-medium.otf);
+    src: url(https://cdn.jsdelivr.net/gh/kr-dev-hoon/welcome/mainSets/assets/webfonts/tvn-medium.otf);
 }
 
 @font-face {
@@ -5804,14 +5804,7 @@
     font-style: normal;
     font-weight: 900;
     font-display: auto;
-    src: url(../webfonts/BMHANNAAir_otf.otf);
-}
-
-@font-face {
-    font-family: 'HSYuji-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/HSYuji-Regular.woff') format('woff');
-    font-weight: lighter;
-    font-style: normal;
+    src: url(https://cdn.jsdelivr.net/gh/kr-dev-hoon/welcome/mainSets/assets/webfonts/BMHANNAAir_otf.otf);
 }
 
 .fa, .far, .fas {
