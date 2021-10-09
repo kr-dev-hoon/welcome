@@ -2594,6 +2594,7 @@ ul.actions.banks li > * {
     margin-top: 0.5em !important;
     margin-bottom: 0.5em !important;
     color : #FFFFFF;
+    width: 100%;
 }
 
 .spanBlue {
