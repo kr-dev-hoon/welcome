@@ -364,19 +364,19 @@
 
 <script type="text/javascript">
 
-    // window.addEventListener('resize', function (event) {
-    //     if (!browser.mobile) {
-    //         if (window.innerHeight > window.innerWidth) {
-    //             if (document.getElementById('head').className === 'pcWidth') {
-    //                 document.getElementById('head').className = '';
-    //             }
-    //         } else {
-    //             if (document.getElementById('head').className === '') {
-    //                 document.getElementById('head').className = 'pcWidth';
-    //             }
-    //         }
-    //     }
-    // }, true);
+    window.addEventListener('resize', function (event) {
+        if (!browser.mobile) {
+            if (window.innerHeight > window.innerWidth) {
+                if (document.getElementById('head').className === 'pcWidth') {
+                    document.getElementById('head').className = '';
+                }
+            } else {
+                if (document.getElementById('head').className === '') {
+                    document.getElementById('head').className = 'pcWidth';
+                }
+            }
+        }
+    }, true);
 
     var page = 1;
     var size = 5;
