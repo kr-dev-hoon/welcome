@@ -82,7 +82,7 @@ html {
     background-color: #313a3d;
     background-attachment: fixed, fixed;
     background-image: url("https://cdn.jsdelivr.net/gh/kr-dev-hoon/welcome/mainSets/assets/css/images/overlay.png"), url("../../images/main.jpg");
-    background-position: top left, top center;
+    background-position: top left, center center;
     background-repeat: repeat, none;
     background-size: auto, cover;
 }
@@ -103,7 +103,7 @@ html.is-preload *, html.is-preload *:before, html.is-preload *:after {
 }
 
 html.is-touch {
-    /*height: 100vh;*/
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -111,7 +111,7 @@ html.is-touch #wrapper {
     -webkit-backface-visibility: hidden;
     -webkit-overflow-scrolling: touch;
     -webkit-transform: translate3d(0, 0, 0);
-    /*height: 100vh;*/
+    height: 100vh;
     overflow: auto;
 }
 
