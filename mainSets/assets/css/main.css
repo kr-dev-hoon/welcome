@@ -82,9 +82,13 @@ html {
     background-color: #313a3d;
     background-attachment: fixed, fixed;
     background-image: url("https://cdn.jsdelivr.net/gh/kr-dev-hoon/welcome/mainSets/assets/css/images/overlay.png"), url("../../images/main.jpg");
-    background-position: top left, center center;
+    background-position: top left, top center;
     background-repeat: repeat, none;
     background-size: auto, cover;
+}
+
+html.pcWidth {
+    background-image: url("https://cdn.jsdelivr.net/gh/kr-dev-hoon/welcome/mainSets/assets/css/images/overlay.png"), url("../../images/main2.jpg") !important;
 }
 
 html.is-preload *, html.is-preload *:before, html.is-preload *:after {
@@ -99,7 +103,7 @@ html.is-preload *, html.is-preload *:before, html.is-preload *:after {
 }
 
 html.is-touch {
-    height: 100vh;
+    /*height: 100vh;*/
     overflow: hidden;
 }
 
@@ -107,7 +111,7 @@ html.is-touch #wrapper {
     -webkit-backface-visibility: hidden;
     -webkit-overflow-scrolling: touch;
     -webkit-transform: translate3d(0, 0, 0);
-    height: 100vh;
+    /*height: 100vh;*/
     overflow: auto;
 }
 
@@ -175,7 +179,7 @@ h2 {
     line-height: 0.5em;
 }
 
-h3 {
+h3, .spanBlue, .spanPink  {
     font-size: 1em;
     line-height: 1.5em;
 }
@@ -2521,6 +2525,93 @@ ul.actions.half li > * {
     width: 80%;
 }
 
+ul.actions.banks {
+    width: calc(100% + 1em);
+    margin : 0 1em 0 -0.5em !important;
+}
+
+ul.actions.banks li {
+    -moz-flex-grow: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-grow: 1;
+    flex-grow: 1;
+    -moz-flex-shrink: 1;
+    -webkit-flex-shrink: 1;
+    -ms-flex-shrink: 1;
+    flex-shrink: 1;
+    width: 100%;
+    text-align:left !important;
+    margin:0 0.5em 0 1em !important;
+    padding: 0 !important;
+}
+
+#part > li {
+    text-align: center !important;
+}
+
+ul.actions.banks li:last-child {
+    margin:0 0.5em 0 0.5em !important;
+}
+
+ul.actions.banks li > * {
+    width: 100%;
+}
+
+.bankInfo {
+    background :#FFFFFF !important;
+    border: solid 1px #dddddd !important;
+}
+
+.bankInfo > td {
+    font-size : 13px;
+}
+
+.bankInfo > td:first-child {
+    width: 80%;
+    padding : 0.5em 0 0.5em 0.5em;
+}
+
+.bankInfo > td:last-child {
+    background: #7aca9a;
+    color : #FFFFFF;
+    text-align: center;
+}
+
+.emphasize {
+    color : #161616;
+}
+
+.softly {
+    color : #8a8e8e;
+}
+
+#moreBtns {
+    margin-bottom: 1em !important;
+}
+
+#moreBtns li {
+    padding: 0 !important;
+    margin-top: 0.5em !important;
+    margin-bottom: 0.5em !important;
+    color : #FFFFFF;
+}
+
+.spanBlue {
+    background-color: #759bbb;
+    border-radius: 5px;
+    font-weight: 450;
+    letter-spacing: 0.075em;
+    line-height: 1em;
+}
+
+.spanPink {
+    background-color: #c78ea0;
+    border-radius: 5px;
+    font-weight: 450;
+    letter-spacing: 0.075em;
+    line-height: 1em;
+}
+
 @media screen and (max-width: 480px) {
 
     ul.actions:not(.fixed) {
@@ -3211,7 +3302,7 @@ h2 span {
     }
 
     /* List */
-    ul.actions {
+    ul.actions:not(.fixed) {
         margin: 0 0 2em 0;
     }
 

@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 
-<html>
+<html id="head" class="pcWidth">
 <head>
     <title>염대훈﹒고영훈의 결혼식</title>
     <meta charset="utf-8"/>
@@ -43,7 +43,7 @@
 <!-- style="background: rgba(0,0,0,0.5)"-->
 <!-- Header -->
 <section id="header">
-    <header class="major" style="background: rgba(161,161,161,0.2); width: fit-content; max-width: 90%; ">
+    <header class="major" style="background: rgba(161,161,161,0.5); width: fit-content; max-width: 90%; ">
         <h1>염대훈<span style="font-size: 0.8em;"> & </span>고영훈</h1>
         <p id="mainInfo">
             2021년 11월 28일(일) 오전 11시<br/>웨딩헤너스 7층 씨엘로홀<br/>
@@ -152,8 +152,8 @@
                                 &nbsp; <a href="http://qr.kakao.com/talk/RyZQUOy.9fgj7zjEJphtQxtUbQY-"
                                           class="fas fa-comment-dots"
                                           style="text-decoration-line: none;"></a></td>
-                            <td><a href="tel:01029073853" class="fas fa-phone" style="text-decoration-line: none;"></a>&nbsp;
-                                &nbsp; <a href="sms:01029073853" class="fas fa-comment-alt"
+                            <td><a href="tel:01042508902" class="fas fa-phone" style="text-decoration-line: none;"></a>&nbsp;
+                                &nbsp; <a href="sms:01042508902" class="fas fa-comment-alt"
                                           style="text-decoration-line: none;"></a>&nbsp;
                                 &nbsp; <a href="http://qr.kakao.com/talk/XRDhGg8z8qCUjwnc0GTAi9fbITo-"
                                           class="fas fa-comment-dots"
@@ -164,13 +164,13 @@
                             <td>신부측 혼주 <span style="font-size: 1.2em;">고근섭</span></td>
                         </tr>
                         <tr>
-                            <td> &nbsp; <a href="tel:01029073853" class="fas fa-phone"
+                            <td> &nbsp; <a href="tel:01097855452" class="fas fa-phone"
                                            style="text-decoration-line: none;"></a>&nbsp;
-                                &nbsp; <a href="sms:01029073853" class="fas fa-comment-alt"
+                                &nbsp; <a href="sms:01097855452" class="fas fa-comment-alt"
                                           style="text-decoration-line: none;"></a></td>
-                            <td> &nbsp; <a href="tel:01029073853" class="fas fa-phone"
+                            <td> &nbsp; <a href="tel:01087918902" class="fas fa-phone"
                                            style="text-decoration-line: none;"></a>&nbsp;
-                                &nbsp; <a href="sms:01029073853" class="fas fa-comment-alt"
+                                &nbsp; <a href="sms:01087918902" class="fas fa-comment-alt"
                                           style="text-decoration-line: none;"></a></td>
                         </tr>
                         </tbody>
@@ -188,42 +188,71 @@
             <header class="major">
                 <h2>마음 전하실곳</h2>
             </header>
-            <a id="btnMore" href="javascript:more();" style="">상세정보 <i class="fas fa-chevron-down"></i></a>
-            <a id="btnHide" href="javascript:more();" style="display: none; text-decoration: none !important;">닫기 <i
-                    class="fas fa-angle-up"></i></a>
-
-            <div id="bank" class="row hidden">
-                <div class="col-12 col-12-medium">
-                    <ul class="actions half fixed">
-                        <li>신랑측</li>
-                        <li>신부측</li>
-                    </ul>
-                    <div>
-                        <ul class="actions half fixed">
-                            <li>신랑 <span style="font-size: 1.2em">염대훈</span><br/>
-                                <span id="back1" cp="xx은행 oooo-oooo-ooo">xx은행 oooo-oooo-ooo</span><br/>
-                                <a href="javascript:copy_to_clipboard('back1')" style="font-size: 13px">copy</a>
-                            </li>
-                            <li>신부 <span style="font-size: 1.2em">고영훈</span><br/>
-                                <span id="back2" cp="xx은행 oooo-oooo-ooo">xx은행 oooo-oooo-ooo</span><br/>
-                                <a href="javascript:copy_to_clipboard('back2')" style="font-size: 13px">copy</a>
-                            </li>
-                        </ul>
-                        <ul class="actions half fixed">
-                            <li>신랑 <span style="font-size: 1.2em">염대훈</span><br/>
-                                <span id="back3" cp="xx은행 oooo-oooo-ooo">xx은행 oooo-oooo-ooo</span><br/>
-                                <a href="javascript:copy_to_clipboard('back3')" style="font-size: 13px">copy</a>
-                            </li>
-                            <li>신부 <span style="font-size: 1.2em">고영훈</span><br/>
-                                <span id="back4" cp="xx은행 oooo-oooo-ooo">xx은행 oooo-oooo-ooo</span><br/>
-                                <a href="javascript:copy_to_clipboard('back4')" style="font-size: 13px">copy</a>
-                            </li>
-                        </ul>
+            <ul id="moreBtns" class="actions special">
+                <li id="btnBtn1" class="send" onclick="more(1);"><span class="spanBlue">&nbsp;신랑측 보기&nbsp;</span></li>
+                <li id="btnHide1" class="send" onclick="hideBank(1);" style="display: none; "><span class="spanBlue">&nbsp;닫기&nbsp;</span>
+                </li>
+                <div id="bankList1" class="row hidden">
+                    <div class="col-12 col-12-medium">
+                        <span class="softly">신랑 혼주 <span class="emphasize">염태익</span> (우리은행)</span><br/>
+                        <div class="table-wrapper">
+                            <table class="alt">
+                                <tbody>
+                                <tr class="bankInfo">
+                                    <td>1002-936-241893</td>
+                                    <td id='back2' cp="우리은행 1002-936-241893" onclick="copy_to_clipboard('back2')">복사
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <span class="softly">신랑 <span class="emphasize">염대훈</span> (카카오뱅크)</span><br/>
+                        <div class="table-wrapper">
+                            <table class="alt">
+                                <tbody>
+                                <tr class="bankInfo">
+                                    <td>3333-07-8585450</td>
+                                    <td id='back1' cp="카카오뱅크 3333-07-8585450" onclick="copy_to_clipboard('back1')">복사
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <li id="btnBtn2" class="send" onclick="more(2);"><span class="spanPink">&nbsp;신부측 보기&nbsp;</span></li>
+                <li id="btnHide2" class="send" onclick="hideBank(2);" style="display: none; "><span class="spanPink">&nbsp;닫기&nbsp;</span>
+                </li>
+                <div id="bankList2" class="row hidden">
+                    <div class="col-12 col-12-medium">
+                        <span class="softly">신부 혼주 <span class="emphasize">고근섭</span> (농협은행)</span><br/>
+                        <div class="table-wrapper">
+                            <table class="alt">
+                                <tbody>
+                                <tr class="bankInfo">
+                                    <td>323013-52-172611</td>
+                                    <td id='back4' cp="농협은행 323013-52-172611" onclick="copy_to_clipboard('back4')">복사
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <span class="softly">신부 <span class="emphasize">고영훈</span> (카카오뱅크)</span><br/>
+                        <div class="table-wrapper">
+                            <table class="alt">
+                                <tbody>
+                                <tr class="bankInfo">
+                                    <td>3333-07-9767329</td>
+                                    <td id='back3' cp="카카오뱅크 3333-07-9767329" onclick="copy_to_clipboard('back3')">복사
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </ul>
         </div>
-        <!--        <a class="more"></a>>-->
         <a href="#four" class="goto-next scrolly">Next</a>
     </div>
 </section>
@@ -335,6 +364,20 @@
 
 <script type="text/javascript">
 
+    window.addEventListener('resize', function (event) {
+        if (!browser.mobile) {
+            if (window.innerHeight > window.innerWidth) {
+                if (document.getElementById('head').className === 'pcWidth') {
+                    document.getElementById('head').className = '';
+                }
+            } else {
+                if (document.getElementById('head').className === '') {
+                    document.getElementById('head').className = 'pcWidth';
+                }
+            }
+        }
+    }, true);
+
     var page = 1;
     var size = 5;
     var comments;
@@ -404,9 +447,9 @@
 
     function readComments() {
 
-        document.getElementById('loadData').style.display = 'block';
-
         if (comments === undefined) {
+
+            document.getElementById('loadData').style.display = 'block';
 
             $.ajax({
                 url: "https://us-central1-comment-c8188.cloudfunctions.net/comments",
@@ -440,10 +483,6 @@
 
         document.getElementById("sendMessage").style.display = 'none';
         document.getElementById("writeData").style.display = 'block';
-
-        // document.getElementById("sendMessage").classList.remove('primary');
-        // document.getElementById("sendMessage").setAttribute("disabled", "disabled");
-        // document.getElementById("sendMessage").value = "작성중...";
 
         var name = document.getElementById("name").value;
         var message = document.getElementById("message").value;
@@ -543,27 +582,24 @@
         alert('감사의 의미로 포토부스를 설치하였습니다. \n4컷 사진을 찍어 결혼식의 추억을 개인적으로 간직하시고, 색다르고 기억에 남는 결혼식이 되길 바라겠습니다.');
     }
 
-    function more() {
+    function more(index) {
 
-        var bank = document.getElementById("bank");
+        var bank = document.getElementById("bankList" + index);
 
-        var classes = bank.classList;
+        bank.classList.remove('hidden');
+        bank.className = 'row appear';
+        document.getElementById("btnBtn" + index).style.display = 'none';
+        document.getElementById('btnHide' + index).style.display = 'block';
 
-        if (classes.contains('hidden') || classes.contains('disappear')) {
-            bank.classList.remove('hidden');
-            bank.className = 'row appear';
-            document.getElementById("btnMore").style.display = 'none';
-            document.getElementById("btnHide").style.display = 'block';
-        } else {
-            bank.classList.remove('appear');
-            bank.className = 'row disappear';
+    }
 
-            setTimeout(() => {
-                document.getElementById("btnMore").style.display = 'block';
-                document.getElementById("btnHide").style.display = 'none';
-                bank.className = 'row disappear hidden';
-            }, 500);
-        }
+    function hideBank(index) {
+
+        var bank = document.getElementById("bankList" + index);
+
+        document.getElementById("btnBtn" + index).style.display = 'block';
+        document.getElementById("btnHide" + index).style.display = 'none';
+        bank.className = 'row disappear hidden';
     }
 
     function forPrint(date) {

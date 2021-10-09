@@ -31,9 +31,9 @@
 				$wrapper = $('#wrapper');
 
 				// Hack: iOS vh bug.
-					if (browser.os == 'ios')
-						$wrapper
-							.css('height', '-webkit-fill-available');
+				// 	if (browser.os == 'ios')
+				// 		$wrapper
+				// 			.css('height', '-webkit-fill-available');
 							// .css('margin-top', -25)
 							// .css('padding-bottom', 25);
 
