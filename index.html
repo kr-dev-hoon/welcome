@@ -457,7 +457,9 @@
                 success: function (response) {
                     document.getElementById('loadData').style.display = 'none';
                     comments = response;
-                    refresh();
+                    if (comments !== '' || comments.toArray().length !== 0) {
+                        refresh();
+                    }
                 },
                 error: function (e) {
                     console.log('error!');
