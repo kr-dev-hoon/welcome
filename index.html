@@ -415,10 +415,11 @@
     }
 
     function makeMoreBtn() {
+
         var ps = document.getElementsByClassName('comments');
 
         for (let index = 0; index < ps.length; index++) {
-            var com = ps[index];
+            const com = ps[index];
             if (com.scrollHeight > com.clientHeight) {
                 document.getElementById('a-' + com.id).href = 'javascript:swapMore(\'' + com.id + '\')';
                 document.getElementById('a-' + com.id).innerText = '더보기';
@@ -484,8 +485,6 @@
         } else {
             refresh();
         }
-
-        makeMoreBtn();
 
     }
 
@@ -591,6 +590,8 @@
 
             guestBook.appendChild(div);
         })
+
+        makeMoreBtn();
     }
 
     function info_photo() {
