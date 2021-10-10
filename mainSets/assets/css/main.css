@@ -2695,8 +2695,12 @@ table tbody tr {
     border-right: 0;
 }
 
-table tbody tr:nth-child(1) {
+.tr-title {
     background-color: rgba(144, 144, 144, 0.075);
+}
+
+.tr-title.pd {
+    padding: 0.5em 0 0.5em 0;
 }
 
 table td {
