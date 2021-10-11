@@ -157,24 +157,24 @@
                 </li>
                 <div id="bankList1" class="row hidden">
                     <div class="col-12 col-12-medium">
-                        <span class="softly">신랑 혼주 <span class="emphasize">염태익</span> (우리은행)</span><br/>
+                        <span class="softly">신랑 혼주 <span class="emphasize">염태익</span></span><br/>
                         <div class="table-wrapper">
                             <table class="alt">
                                 <tbody>
                                 <tr class="bankInfo">
-                                    <td>1002-936-241893</td>
+                                    <td style="font-size:1.1em;">우리은행 1002-936-241893</td>
                                     <td id='back2' cp="우리은행 1002-936-241893" onclick="copy_to_clipboard('back2')">복사
                                     </td>
                                 </tr>
                                 </tbody>
                             </table>
                         </div>
-                        <span class="softly">신랑 <span class="emphasize">염대훈</span> (카카오뱅크)</span><br/>
+                        <span class="softly">신랑 <span class="emphasize">염대훈</span></span><br/>
                         <div class="table-wrapper">
                             <table class="alt">
                                 <tbody>
                                 <tr class="bankInfo">
-                                    <td>3333-07-8585450</td>
+                                    <td style="font-size:1.1em;">카카오뱅크 3333-07-8585450</td>
                                     <td id='back1' cp="카카오뱅크 3333-07-8585450" onclick="copy_to_clipboard('back1')">복사
                                     </td>
                                 </tr>
@@ -188,24 +188,24 @@
                 </li>
                 <div id="bankList2" class="row hidden">
                     <div class="col-12 col-12-medium">
-                        <span class="softly">신부 혼주 <span class="emphasize">고근섭</span> (농협은행)</span><br/>
+                        <span class="softly">신부 혼주 <span class="emphasize">고근섭</span></span><br/>
                         <div class="table-wrapper">
                             <table class="alt">
                                 <tbody>
                                 <tr class="bankInfo">
-                                    <td>323013-52-172611</td>
+                                    <td style="font-size:1.1em;">농협은행 323013-52-172611</td>
                                     <td id='back4' cp="농협은행 323013-52-172611" onclick="copy_to_clipboard('back4')">복사
                                     </td>
                                 </tr>
                                 </tbody>
                             </table>
                         </div>
-                        <span class="softly">신부 <span class="emphasize">고영훈</span> (카카오뱅크)</span><br/>
+                        <span class="softly">신부 <span class="emphasize">고영훈</span></span><br/>
                         <div class="table-wrapper">
                             <table class="alt">
                                 <tbody>
                                 <tr class="bankInfo">
-                                    <td>3333-07-9767329</td>
+                                    <td style="font-size:1.1em;">카카오뱅크 3333-07-9767329</td>
                                     <td id='back3' cp="카카오뱅크 3333-07-9767329" onclick="copy_to_clipboard('back3')">복사
                                     </td>
                                 </tr>
@@ -322,7 +322,7 @@
 <section id="footer">
     <div class="container" id="congrat">
         <header class="major">
-            <h2>방명록</h2>
+            <h2>축하하기</h2>
         </header>
         <h5 style="color: gray">신랑﹒신부에게 축하의 한마디를 적어주세요!</h5>
         <form action="javascript:write();">
@@ -377,19 +377,9 @@
 
 <script type="text/javascript">
 
-    window.addEventListener('resize', function (event) {
-        if (!browser.mobile) {
-            if (window.innerHeight > window.innerWidth) {
-                if (document.getElementById('head').className === 'pcWidth') {
-                    document.getElementById('head').className = '';
-                }
-            } else {
-                if (document.getElementById('head').className === '') {
-                    document.getElementById('head').className = 'pcWidth';
-                }
-            }
-        }
-    }, true);
+    window.addEventListener('resize', changeMainImg, true);
+
+    $(document).ready(changeMainImg);
 
     var page = 1;
     var size = 5;
@@ -403,6 +393,20 @@
         timeOut: 2000,
         positionClass: 'toast-bottom-center'
     };
+
+    function changeMainImg() {
+            if (!browser.mobile) {
+                if (window.innerHeight > window.innerWidth) {
+                    if (document.getElementById('head').className === 'pcWidth') {
+                        document.getElementById('head').className = '';
+                    }
+                } else {
+                    if (document.getElementById('head').className === '') {
+                        document.getElementById('head').className = 'pcWidth';
+                    }
+                }
+            }
+    }
 
     function next() {
         page += 1;
